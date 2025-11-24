@@ -310,7 +310,7 @@
             margin-left: -1em;
         }
         
-        /* قسم التراث */
+        /* قسم التراث - محسن */
         .heritage {
             background-color: var(--white);
         }
@@ -792,6 +792,256 @@
             40% { transform: translateY(-10px) scale(1.1); }
             80% { transform: translateY(-5px) scale(1.08); }
         }
+        
+        /* أنماط إضافية للعيد الوطني والتراث */
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            right: 50%;
+            margin-right: -3px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background-color: var(--white);
+            border: 4px solid var(--secondary-color);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .left {
+            right: 0;
+        }
+        
+        .right {
+            right: 50%;
+        }
+        
+        .left::after {
+            left: -16px;
+        }
+        
+        .right::after {
+            left: -16px;
+        }
+        
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: var(--white);
+            position: relative;
+            border-radius: 6px;
+            box-shadow: var(--shadow);
+        }
+        
+        .heritage-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .heritage-category {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .heritage-category:hover {
+            transform: translateY(-10px);
+        }
+        
+        .heritage-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light-bg);
+        }
+        
+        .heritage-category ul {
+            list-style-type: none;
+        }
+        
+        .heritage-category li {
+            padding: 8px 0;
+            border-bottom: 1px dashed var(--light-bg);
+            position: relative;
+            padding-right: 25px;
+        }
+        
+        .heritage-category li:before {
+            content: "★";
+            position: absolute;
+            right: 0;
+            color: var(--secondary-color);
+        }
+
+        /* أنماط التراث المحسنة */
+        .heritage-intro {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .heritage-sections {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+        
+        .heritage-section {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .heritage-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .heritage-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light-bg);
+            display: flex;
+            align-items: center;
+        }
+        
+        .heritage-section h3 i {
+            margin-left: 10px;
+            color: var(--secondary-color);
+        }
+        
+        .heritage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .heritage-item-detailed {
+            background: var(--light-bg);
+            padding: 20px;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+        
+        .heritage-item-detailed:hover {
+            background: #e9e9e9;
+            transform: translateY(-3px);
+        }
+        
+        .heritage-item-detailed h4 {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .heritage-item-detailed h4 i {
+            margin-left: 8px;
+            color: var(--primary-color);
+        }
+        
+        .heritage-item-detailed ul {
+            list-style-type: none;
+            padding-right: 0;
+        }
+        
+        .heritage-item-detailed li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #ccc;
+            position: relative;
+            padding-right: 25px;
+        }
+        
+        .heritage-item-detailed li:before {
+            content: "★";
+            position: absolute;
+            right: 0;
+            color: var(--primary-color);
+        }
+        
+        .heritage-gallery-detailed {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .gallery-item-detailed {
+            height: 200px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            background-size: cover;
+            background-position: center;
+            transition: var(--transition);
+        }
+        
+        .gallery-item-detailed:hover {
+            transform: scale(1.05);
+        }
+        
+        .heritage-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .feature-card {
+            background: var(--light-bg);
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .feature-card h4 {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
@@ -867,7 +1117,7 @@
             </div>
         </section>
         
-        <!-- قسم التراث -->
+        <!-- قسم التراث المحسن -->
         <section class="heritage section-padding">
             <div class="container">
                 <h2 class="section-title heritage-title">التراث العُماني</h2>
@@ -985,30 +1235,93 @@
                 
                 <div class="celebration-info">
                     <div class="celebration-text">
-                        <p class="national-day-text-1">يحتفل الشعب العُماني بالعيد الوطني في 20 نوفمبر من كل عام، وهو ذكرى تولي جلالة السلطان هيثم بن طارق - حفظه الله - مقاليد الحكم في البلاد.</p>
-                        <p class="national-day-text-2">يعتبر هذا اليوم مناسبة وطنية غالية على قلوب جميع العُمانيين، حيث تتزين الشوارع والمباني بالأعلام والزينة، وتقام الاحتفالات والفعاليات في جميع أنحاء السلطنة.</p>
+                        <h3>العيد الوطني العُماني: ملحمة وطنية تتجدد</h3>
+                        <p>يحتفل الشعب العُماني بالعيد الوطني في 20 نوفمبر من كل عام، وهو ذكرى تولي جلالة السلطان هيثم بن طارق - حفظه الله - مقاليد الحكم في البلاد. يمثل هذا اليوم منعطفاً تاريخياً هاماً في مسيرة عُمان الحديثة، حيث يجسد قيم الوحدة الوطنية والتلاحم بين القيادة والشعب.</p>
                         
-                        <h3>مظاهر الاحتفال بالعيد الوطني</h3>
+                        <h4>رحلة العيد الوطني عبر التاريخ</h4>
+                        <div class="timeline">
+                            <div class="timeline-item left">
+                                <div class="timeline-content">
+                                    <h5>1970</h5>
+                                    <p>بداية النهضة العُمانية الحديثة تحت قيادة السلطان قابوس بن سعيد - طيب الله ثراه</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item right">
+                                <div class="timeline-content">
+                                    <h5>1980</h5>
+                                    <p>تطور الاحتفالات لتشمل عروضاً عسكرية وفعاليات ثقافية في مختلف المحافظات</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item left">
+                                <div class="timeline-content">
+                                    <h5>2000</h5>
+                                    <p>انطلاق احتفالات الألفية الجديدة بمشاركة شعبية واسعة وعروض متطورة</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item right">
+                                <div class="timeline-content">
+                                    <h5>2020</h5>
+                                    <p>تولي جلالة السلطان هيثم بن طارق مقاليد الحكم واستمرار مسيرة النهضة</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h4>مظاهر الاحتفال بالعيد الوطني</h4>
                         <div class="celebration-features">
                             <div class="feature-item">
                                 <i class="fas fa-flag"></i>
                                 <h4>رفع العلم الوطني</h4>
-                                <p>يرفع العلم العُماني في جميع المباني الحكومية والخاصة</p>
+                                <p>يرفع العلم العُماني في جميع المباني الحكومية والخاصة، وتزين الشوارع بالأعلام والزينة الخضراء والحمراء</p>
                             </div>
                             <div class="feature-item">
                                 <i class="fas fa-music"></i>
                                 <h4>الفعاليات الثقافية</h4>
-                                <p>عروض فنية وتراثية تعبر عن الهوية العُمانية</p>
+                                <p>عروض فنية وتراثية تعبر عن الهوية العُمانية، تشمل الرزحة والعازي والفنون الشعبية الأخرى</p>
                             </div>
                             <div class="feature-item">
                                 <i class="fas fa-fireworks"></i>
                                 <h4>الألعاب النارية</h4>
-                                <p>عروض الألعاب النارية في مختلف المحافظات</p>
+                                <p>عروض الألعاب النارية في مختلف المحافظات، تزين سماء عُمان بألوان العلم الوطني</p>
                             </div>
                             <div class="feature-item">
                                 <i class="fas fa-gift"></i>
                                 <h4>المنح والعطايا</h4>
-                                <p>إصدار مراسيم بالعفو والعطايا السلطانية</p>
+                                <p>إصدار مراسيم بالعفو والعطايا السلطانية، وتكريم المتميزين في مختلف المجالات</p>
+                            </div>
+                        </div>
+                        
+                        <h4>إنجازات وطنية تستحق الاحتفال</h4>
+                        <p>شهدت عُمان خلال مسيرة النهضة إنجازات تنموية كبيرة في مختلف المجالات:</p>
+                        <ul>
+                            <li><strong>التعليم:</strong> ارتفاع معدل الالتحاق بالتعليم إلى أكثر من 95%</li>
+                            <li><strong>الصحة:</strong> تطوير نظام صحي متكامل يصل إلى جميع مناطق السلطنة</li>
+                            <li><strong>البنية التحتية:</strong> شبكة طرق متطورة تربط جميع المحافظات</li>
+                            <li><strong>الاقتصاد:</strong> تنويع مصادر الدخل وتطوير القطاعات غير النفطية</li>
+                            <li><strong>السياسة الخارجية:</strong> تعزيز دور عُمان الإقليمي والدولي كدولة محبة للسلام</li>
+                        </ul>
+                        
+                        <h4>رسائل العيد الوطني</h4>
+                        <p>يحمل العيد الوطني رسائل عميقة للشعب العُماني:</p>
+                        <div class="celebration-features">
+                            <div class="feature-item">
+                                <i class="fas fa-handshake"></i>
+                                <h4>الوحدة الوطنية</h4>
+                                <p>تعزيز روح الانتماء والولاء للوطن والقيادة</p>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-history"></i>
+                                <h4>التواصل الحضاري</h4>
+                                <p>ربط الأصالة بالمعاصرة في مسيرة التنمية</p>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-users"></i>
+                                <h4>التلاحم المجتمعي</h4>
+                                <p>تعزيز قيم التعاون والتكافل بين أفراد المجتمع</p>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-rocket"></i>
+                                <h4>الطموح المستقبلي</h4>
+                                <p>التطلع نحو مستقبل أفضل للأجيال القادمة</p>
                             </div>
                         </div>
                     </div>
@@ -1017,7 +1330,7 @@
         </div>
     </div>
 
-    <!-- صفحة التراث -->
+    <!-- صفحة التراث المحسنة -->
     <div id="heritage" class="page">
         <div class="page-header">
             <div class="container">
@@ -1030,23 +1343,197 @@
             <div class="container">
                 <a href="#" class="back-btn" data-page="home"><i class="fas fa-arrow-right"></i> <span class="back-text">العودة إلى الرئيسية</span></a>
                 
-                <div class="heritage-content">
-                    <div class="heritage-text">
-                        <p class="heritage-text-1">يتميز التراث العُماني بتنوعه وغناه، حيث يحافظ العُمانيون على تقاليدهم وهويتهم الثقافية عبر الأجيال. تشمل مظاهر التراث:</p>
-                        <ul class="heritage-list">
-                            <li class="heritage-item-1">الحرف التقليدية مثل صناعة الفخار والنسيج والفضيات</li>
-                            <li class="heritage-item-2">العمارة العُمانية المميزة في القلاع والحصون</li>
-                            <li class="heritage-item-3">الموسيقى والفنون الشعبية مثل الرزحة والعازي</li>
-                            <li class="heritage-item-4">الأزياء التقليدية مثل الدشداشة والعباءة</li>
-                            <li class="heritage-item-5">المأكولات الشعبية مثل الشواء والهريس</li>
-                        </ul>
-                        <p class="heritage-text-2">تولي الحكومة العُمانية اهتماماً كبيراً للحفاظ على التراث الثقافي من خلال المتاحف والمهرجانات والأنشطة الثقافية المختلفة.</p>
+                <div class="heritage-intro">
+                    <h2>التراث العُماني: كنز حضاري يتنفس عبر العصور</h2>
+                    <p>يتميز التراث العُماني بتنوعه وغناه، حيث يحافظ العُمانيون على تقاليدهم وهويتهم الثقافية عبر الأجيال. يمتد هذا التراث لآلاف السنين، ويشكل نسيجاً حضارياً فريداً يجمع بين الأصالة والحداثة.</p>
+                </div>
+                
+                <div class="heritage-sections">
+                    <!-- قسم الحرف التقليدية -->
+                    <div class="heritage-section">
+                        <h3><i class="fas fa-hands"></i> الحرف التقليدية: إبداع الأيادي العُمانية</h3>
+                        <p>تمثل الحرف التقليدية في عُمان إرثاً حياً يعكس براعة الحرفي العُماني وارتباطه الوثيق ببيئته وتراثه. تتنوع هذه الحرف بين صناعات تتعلق بالحياة اليومية وأخرى ترتبط بالمناسبات والزينة.</p>
+                        
+                        <div class="heritage-grid">
+                            <div class="heritage-item-detailed">
+                                <h4><i class="fas fa-vase"></i> صناعة الفخار</h4>
+                                <p>تمتد جذور صناعة الفخار في عُمان إلى آلاف السنين، وتشتهر بها ولاية بهلاء بشكل خاص:</p>
+                                <ul>
+                                    <li>أواني الطهي التقليدية بأنواعها المختلفة</li>
+                                    <li>جرار تخزين المياه والحبوب</li>
+                                    <li>أدوات الزينة والتحف الفنية</li>
+                                    <li>تقنيات حرق الفخار بالطرق التقليدية</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="heritage-item-detailed">
+                                <h4><i class="fas fa-rug"></i> النسيج والسجاد</h4>
+                                <p>تشكل صناعة النسيج جزءاً أساسياً من التراث العُماني، خاصة في المناطق الداخلية:</p>
+                                <ul>
+                                    <li>السجاد العُماني بأنواعه وألوانه المميزة</li>
+                                    <li>أغطية الرأس التقليدية (الكمة)</li>
+                                    <li>ملابس الصوف والقطن التقليدية</li>
+                                    <li>أدوات النسيج اليدوية التقليدية</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="heritage-item-detailed">
+                                <h4><i class="fas fa-gem"></i> صناعة الحلي والفضيات</h4>
+                                <p>تعتبر الصناعات الفضية من أبرز مظاهر التراث العُماني، وتتميز بتصاميمها الفريدة:</p>
+                                <ul>
+                                    <li>الخناجر العُمانية المطعمة بالفضة</li>
+                                    <li>الحلي النسائية التقليدية</li>
+                                    <li>أدوات الزينة المنزلية الفضية</li>
+                                    <li>تقنيات النقش والتطعيم التقليدية</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="heritage-gallery">
-                        <div class="heritage-item" style="background-image: url('https://travelindigenous.com/wp-content/uploads/%D8%B5%D9%86%D8%A7%D8%B9%D8%A9-%D8%A7%D9%84%D9%81%D8%AE%D8%A7%D8%B1-%D9%81%D9%8A-%D8%A7%D9%84%D8%A5%D9%85%D8%A7%D8%B1%D8%A7%D8%AA-02.webp')"></div>
-                        <div class="heritage-item" style="background-image: url('https://www.aljazeera.net/wp-content/uploads/2019/08/2c316077-6626-4196-8ebe-b42db8dd2e32.jpeg?quality=80')"></div>
-                        <div class="heritage-item" style="background-image: url('https://www.aljazeera.net/wp-content/uploads/2018/01/be3d0dc4-c8d2-4603-a688-cf3224144eaa.jpeg')"></div>
-                        <div class="heritage-item" style="background-image: url('https://www.alkhaleej.ae/sites/default/files/migrated/bd580ddc-c763-4488-84df-c88df495c0b9.jpg')"></div>
+                    
+                    <!-- قسم العمارة العُمانية -->
+                    <div class="heritage-section">
+                        <h3><i class="fas fa-archway"></i> العمارة العُمانية: حوار بين الأرض والإنسان</h3>
+                        <p>تتميز العمارة العُمانية بتكيفها مع البيئة المحيطة، مستخدمة المواد المحلية ببراعة تجمع بين المتانة والجمال.</p>
+                        
+                        <div class="heritage-features">
+                            <div class="feature-card">
+                                <i class="fas fa-fort-awesome"></i>
+                                <h4>القلاع والحصون</h4>
+                                <p>أكثر من 500 قلعة وحصن تشهد على تاريخ عُمان العريق</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <i class="fas fa-mosque"></i>
+                                <h4>المساجد</h4>
+                                <p>تصميمات معمارية فريدة تجمع بين البساطة والجمال</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <i class="fas fa-water"></i>
+                                <h4>الأفلاج</h4>
+                                <p>نظام ري تقليدي أدرج على لائحة التراث العالمي لليونسكو</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <i class="fas fa-home"></i>
+                                <h4>البيوت التقليدية</h4>
+                                <p>مبانٍ طينية متكيفة مع المناخ الصحراوي</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- قسم الفنون الشعبية -->
+                    <div class="heritage-section">
+                        <h3><i class="fas fa-music"></i> الفنون الشعبية: إيقاعات الوطن</h3>
+                        <p>تمثل الفنون الشعبية في عُمان تعبيراً حياً عن روح الشعب وتراثه الثقافي، حيث تجسد قيم المجتمع وتقاليده في إيقاعات وحركات فنية راقية.</p>
+                        
+                        <div class="heritage-grid">
+                            <div class="heritage-item-detailed">
+                                <h4><i class="fas fa-swords"></i> الرزحة</h4>
+                                <p>فن شعبي يؤدى بالسيوف والتروس، يعبر عن الشجاعة والقوة:</p>
+                                <ul>
+                                    <li>أداء جماعي يتضمن حركات متزامنة</li>
+                                    <li>يرافقه إنشاد الشعر النبطي</li>
+                                    <li>يؤدى في المناسبات الوطنية والاجتماعية</li>
+                                    <li>يمثل هوية وطنية وتراثاً حياً</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="heritage-item-detailed">
+                                <h4><i class="fas fa-microphone-alt"></i> العازي</h4>
+                                <p>فن شعبي يعتمد على الإلقاء الشعري المصحوب بالحركات الإيقاعية:</p>
+                                <ul>
+                                    <li>يركز على مواضيع الفخر والحماسة</li>
+                                    <li>يؤدى في الاستقبالات الرسمية</li>
+                                    <li>يعبر عن قيم الكرم والشهامة</li>
+                                    <li>يحتفي بالمناسبات والأحداث الهامة</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="heritage-item-detailed">
+                                <h4><i class="fas fa-camel"></i> التغرودة</h4>
+                                <p>فن شعبي بدوي يعبر عن حياة الصحراء والترحال:</p>
+                                <ul>
+                                    <li>يرافق رحلات القوافل والإبل</li>
+                                    <li>يعتمد على الإيقاعات البسيطة</li>
+                                    <li>يتناول مواضيع الحنين والغربة</li>
+                                    <li>يحكي قصص البطولة والفروسية</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- قسم المأكولات الشعبية -->
+                    <div class="heritage-section">
+                        <h3><i class="fas fa-utensils"></i> المأكولات الشعبية: نكهات الأصالة</h3>
+                        <p>تشكل المأكولات التقليدية جزءاً مهماً من التراث الثقافي العُماني، حيث تعكس تنوع البيئات الجغرافية وتأثرها بطرق الحياة المختلفة.</p>
+                        
+                        <div class="heritage-grid">
+                            <div class="heritage-item-detailed">
+                                <h4><i class="fas fa-drumstick-bite"></i> الأطباق الرئيسية</h4>
+                                <ul>
+                                    <li><strong>الهريس:</strong> طبق من القمح واللحم المطبوخ لفترات طويلة</li>
+                                    <li><strong>الشواء:</strong> لحم الضأن المشوي على الفحم بطريقة تقليدية</li>
+                                    <li><strong>المقلو:</strong> أرز مطبوخ مع اللحم والتوابل العُمانية</li>
+                                    <li><strong>المحلى:</strong> حلوى تقليدية من الدقيق والسمن والعسل</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="heritage-item-detailed">
+                                <h4><i class="fas fa-coffee"></i> المشروبات التقليدية</h4>
+                                <ul>
+                                    <li><strong>قهوة الهيل:</strong> القهوة العربية الممزوجة بهيل</li>
+                                    <li><strong>شراب الليمون:</strong> مشروب منعش يقدم في المناسبات</li>
+                                    <li><strong>شراب التمر:</strong> مشروب حلو من التمر والماء</li>
+                                    <li><strong>شاي الأعشاب:</strong> مشروبات عشبية تقليدية</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- قسم الجهود الوطنية -->
+                    <div class="heritage-section">
+                        <h3><i class="fas fa-hands-helping"></i> الجهود الوطنية للحفاظ على التراث</h3>
+                        <p>تولي الحكومة العُمانية اهتماماً كبيراً للحفاظ على التراث الثقافي من خلال مبادرات ومشاريع متنوعة تهدف إلى توثيق التراث ونقله للأجيال القادمة.</p>
+                        
+                        <div class="heritage-features">
+                            <div class="feature-card">
+                                <i class="fas fa-landmark"></i>
+                                <h4>المتاحف</h4>
+                                <p>إنشاء المتاحف الوطنية والمحلية لعرض التراث</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <i class="fas fa-calendar-alt"></i>
+                                <h4>المهرجانات</h4>
+                                <p>تنظيم المهرجانات التراثية السنوية</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <i class="fas fa-tools"></i>
+                                <h4>دعم الحرفيين</h4>
+                                <p>دعم الحرفيين وتشجيع الصناعات التقليدية</p>
+                            </div>
+                            
+                            <div class="feature-card">
+                                <i class="fas fa-book"></i>
+                                <h4>التوثيق</h4>
+                                <p>توثيق التراث الشفوي والمادي</p>
+                            </div>
+                        </div>
+                        
+                        <p class="heritage-text-2" style="margin-top: 20px; text-align: center; font-style: italic;">يظل التراث العُماني شاهداً حياً على عراقة الحضارة العُمانية، ومرآة تعكس عمق التاريخ وأصالة الإنسان العُماني الذي حافظ على هويته رغم كل التحديات.</p>
+                    </div>
+                </div>
+                
+                <!-- معرض الصور -->
+                <div class="heritage-section">
+                    <h3><i class="fas fa-images"></i> معرض التراث العُماني</h3>
+                    <div class="heritage-gallery-detailed">
+                        <div class="gallery-item-detailed" style="background-image: url('https://travelindigenous.com/wp-content/uploads/%D8%B5%D9%86%D8%A7%D8%B9%D8%A9-%D8%A7%D9%84%D9%81%D8%AE%D8%A7%D8%B1-%D9%81%D9%8A-%D8%A7%D9%84%D8%A5%D9%85%D8%A7%D8%B1%D8%A7%D8%AA-02.webp')"></div>
+                        <div class="gallery-item-detailed" style="background-image: url('https://www.aljazeera.net/wp-content/uploads/2019/08/2c316077-6626-4196-8ebe-b42db8dd2e32.jpeg?quality=80')"></div>
+                        <div class="gallery-item-detailed" style="background-image: url('https://www.aljazeera.net/wp-content/uploads/2018/01/be3d0dc4-c8d2-4603-a688-cf3224144eaa.jpeg')"></div>
+                        <div class="gallery-item-detailed" style="background-image: url('https://www.alkhaleej.ae/sites/default/files/migrated/bd580ddc-c763-4488-84df-c88df495c0b9.jpg')"></div>
                     </div>
                 </div>
             </div>
@@ -1348,7 +1835,7 @@
                     "قلعة البريمي - القلعة التاريخية الشهيرة وحارسة الذاكرة العُمانية",
                     "واحة البريمي - واحة خضراء شاسعة وجنة في قلب الصحراء",
                     "سوق البريمي التقليدي - سوق شعبي تاريخي يعبق بروائح التراث",
-                    "حديقة البريمي العامة - متنزه طبيعي جميل ورئة المحافظة الخضراء",
+                    "حديقة البريمي العامة - متنزه طبيعي ورئة المحافظة الخضراء",
                     "متحف البريمي - خزانة الذاكرة التراثية ومعرض الحضارة العُمانية",
                     "منطقة الخطم الأثرية - مواقع أثرية تاريخية وشواهد على عراقة المنطقة"
                 ],
@@ -1540,7 +2027,7 @@
                     "جبل الأخضر - منطقة جبلية سياحية وسقف الشرق العُماني"
                 ],
                 galleryImages: [
-                    "https://om.sakan.co/blog/wp-content/uploads/2024/05/%D9%85%D8%AD%D8%A7%D9%81%D8%B8%D8%A9-%D8%A7%D9%84%D8%B4%D8%B1%D9%82%D9%8A%D8%A9-%D8%B9%D9%85%D8%A7%D9%86-%D8%A3%D9%81%D8%B6%D9%84-8-%D8%A3%D9%85%D8%A7%D9%83%D9%86-%D8%B3%D9%8A%D8%A7%D8%AD%D9%8A%D8%A9-%D9%81%D9%8A-%D8%A7%D9%84%D8%B4%D8%B1%D9%82%D9%8A%D8%A9-%D8%B3%D9%84%D8%B7%D9%86%D8%A9-%D8%B9%D9%85%D8%A7%D9%86.jpg",
+                    "https://om.sakan.co/blog/wp-content/uploads/2024/05/%D9%85%D8%AD%D8%A7%D9%81%D8%B8%D8%A9-%D8%A7%D9%84%D8%B4%D8%B1%D9%82%D9%8A%D8%A9-%D8%B9%D9%85%D8%A7%D9%86-%D8%A3%D9%81%D8%B6%D9%84-8-%D8%A3%D9%85%D8%A7%D9%83%D9%86-%D8%B3%D9%8A%D8%A7%D8%AD%D9%8A%D8%A9-%D9%81%D9%8A-%D8%A7%D9%84%D8%B4%D8%B1%D9%82%D9%8A%D8%A9-%D8%B3%D9%8A%D8%A7%D8%AD%D9%8A%D8%A9-%D8%B3%D9%8A%D8%A7%D8%AD%D9%8A%D8%A9-%D8%B3%D9%84%D8%B7%D9%86%D8%A9-%D8%B9%D9%85%D8%A7%D9%86.jpg",
                     "https://www.omaninfo.om/files/images/thumb/2024-03-28-09-17-57_6604fd853a3d1.jpeg",
                     "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/9d/6b/c4/wadi-bani-khalid-one.jpg?w=1400&h=-1&s=1"
                 ]
