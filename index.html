@@ -80,6 +80,19 @@
             transform: translateY(-3px);
         }
         
+        .btn-secondary {
+            background-color: var(--secondary-color);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--primary-color);
+        }
+        
+        .view-all-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+
         /* رأس الصفحة */
         header {
             background: linear-gradient(to right, var(--secondary-color), var(--white), var(--primary-color));
@@ -274,235 +287,43 @@
             transform: translateY(0);
         }
         
-        /* قسم العيد الوطني */
-        .national-day {
-            background-color: var(--light-bg);
+        /* قسم العيد الوطني في الصفحة الرئيسية (مختصر) */
+        .national-day-main {
+            background-color: var(--white);
         }
         
-        .celebration-info {
+        .national-day-content {
             display: flex;
             flex-wrap: wrap;
-            align-items: center;
             gap: 30px;
+            align-items: center;
         }
         
-        .celebration-text {
+        .national-day-text {
             flex: 1;
             min-width: 300px;
         }
         
-        .celebration-text ul {
-            margin: 20px 0;
-            padding-right: 20px;
-        }
-        
-        .celebration-text li {
-            margin-bottom: 10px;
-            position: relative;
-        }
-        
-        .celebration-text li::before {
-            content: "•";
-            color: var(--primary-color);
-            font-weight: bold;
-            display: inline-block;
-            width: 1em;
-            margin-left: -1em;
-        }
-        
-        /* تصميم جديد لرحلة العيد الوطني */
-        .national-journey {
-            margin: 60px 0;
-        }
-        
-        .journey-container {
-            position: relative;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .journey-path {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-            transform: translateY(-50%);
-            z-index: 1;
-        }
-        
-        .journey-milestones {
-            display: flex;
-            justify-content: space-between;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .milestone {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 20%;
-            text-align: center;
-        }
-        
-        .milestone-point {
-            width: 30px;
-            height: 30px;
-            background-color: var(--white);
-            border: 4px solid var(--primary-color);
-            border-radius: 50%;
-            margin-bottom: 15px;
-            position: relative;
-            z-index: 3;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .milestone-point i {
-            color: var(--primary-color);
-            font-size: 14px;
-            opacity: 0;
-            transition: var(--transition);
-        }
-        
-        .milestone:hover .milestone-point {
-            transform: scale(1.2);
-            background-color: var(--primary-color);
-        }
-        
-        .milestone:hover .milestone-point i {
-            opacity: 1;
-            color: var(--white);
-        }
-        
-        .milestone-year {
-            font-weight: bold;
-            font-size: 1.2rem;
-            color: var(--secondary-color);
-            margin-bottom: 10px;
-        }
-        
-        .milestone-content {
-            background-color: var(--white);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            min-height: 180px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        
-        .milestone:hover .milestone-content {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-        }
-        
-        .milestone-content h4 {
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-        
-        /* بطاقات الاحتفال الدوارة */
-        .celebration-cards {
+        .national-day-gallery {
+            flex: 1;
+            min-width: 300px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin: 50px 0;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
         }
         
-        .celebration-card {
-            perspective: 1000px;
-            height: 300px;
-        }
-        
-        .card-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-            transition: transform 0.8s;
-            transform-style: preserve-3d;
-        }
-        
-        .celebration-card:hover .card-inner {
-            transform: rotateY(180deg);
-        }
-        
-        .card-front, .card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            border-radius: 15px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            box-shadow: var(--shadow);
-        }
-        
-        .card-front {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: var(--white);
-        }
-        
-        .card-front i {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-        
-        .card-back {
-            background-color: var(--white);
-            color: var(--text-color);
-            transform: rotateY(180deg);
-        }
-        
-        /* عرض تفاعلي للاحتفالات */
-        .celebration-showcase {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin: 50px 0;
-        }
-        
-        .celebration-item {
-            background: var(--white);
-            border-radius: 15px;
+        .national-day-item {
+            height: 150px;
+            border-radius: 8px;
             overflow: hidden;
             box-shadow: var(--shadow);
+            background-size: cover;
+            background-position: center;
             transition: var(--transition);
-            position: relative;
         }
         
-        .celebration-item:hover {
-            transform: translateY(-10px);
-        }
-        
-        .celebration-icon {
-            height: 80px;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 2.5rem;
-        }
-        
-        .celebration-details {
-            padding: 20px;
-            text-align: center;
-        }
-        
-        .celebration-details h4 {
-            color: var(--primary-color);
-            margin-bottom: 10px;
+        .national-day-item:hover {
+            transform: scale(1.05);
         }
         
         /* قسم التراث - محسن */
@@ -802,6 +623,453 @@
             margin-right: 8px;
         }
         
+        /* قسم العيد الوطني المبتكر في الصفحة الانتقالية */
+        .national-day-innovative {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .celebration-hero {
+            text-align: center;
+            padding: 60px 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 20px;
+            margin-bottom: 50px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .celebration-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(255,255,255,0.1) 0%, transparent 50%);
+            animation: gentlePulse 8s infinite ease-in-out;
+        }
+        
+        @keyframes gentlePulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 0.8; }
+        }
+        
+        .celebration-hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .celebration-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* شبكة البطاقات المبتكرة */
+        .celebration-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .celebration-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: var(--transition);
+            position: relative;
+            z-index: 1;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .celebration-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-color) 0%, transparent 70%);
+            opacity: 0;
+            transition: var(--transition);
+            z-index: -1;
+        }
+        
+        .celebration-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .celebration-card:hover::before {
+            opacity: 0.05;
+        }
+        
+        .card-icon {
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-icon::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            z-index: -1;
+        }
+        
+        .card-icon i {
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
+        }
+        
+        .card-content {
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .card-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .card-content p {
+            color: var(--text-color);
+            line-height: 1.7;
+        }
+        
+        /* الجدول الزمني المبتكر */
+        .timeline-section {
+            margin: 80px 0;
+            position: relative;
+        }
+        
+        .timeline-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+        
+        .timeline-line {
+            position: absolute;
+            top: 0;
+            right: 50%;
+            transform: translateX(50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+            z-index: 0;
+        }
+        
+        .timeline-items {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+        
+        .timeline-content {
+            flex: 1;
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .timeline-content:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 20px;
+            height: 20px;
+            background: var(--white);
+            transform: translateY(-50%) rotate(45deg);
+            box-shadow: 3px 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            left: -10px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content::before {
+            right: -10px;
+        }
+        
+        .timeline-year {
+            flex: 0 0 150px;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 50%;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            margin: 0 30px;
+            position: relative;
+            z-index: 2;
+            transition: var(--transition);
+        }
+        
+        .timeline-year:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+        
+        .timeline-content h4 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        /* إنجازات وطنية مبتكرة */
+        .achievements-section {
+            margin: 80px 0;
+        }
+        
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .achievement-item {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .achievement-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            transform: scaleX(0);
+            transition: var(--transition);
+        }
+        
+        .achievement-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .achievement-item:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .achievement-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .achievement-item h4 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+        
+        /* رسائل العيد الوطني */
+        .messages-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 80px 0;
+            border-radius: 20px;
+            margin: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .messages-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 0%, transparent 50%);
+        }
+        
+        .messages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .message-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: var(--transition);
+        }
+        
+        .message-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .message-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+        
+        .message-card h4 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        /* تأثيرات إضافية */
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(0, 128, 0, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(0, 128, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 128, 0, 0); }
+        }
+
+        /* قسم التراث المبتكر في الصفحة الانتقالية */
+        .heritage-innovative {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .heritage-hero {
+            text-align: center;
+            padding: 60px 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 20px;
+            margin-bottom: 50px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .heritage-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(255,255,255,0.1) 0%, transparent 50%);
+            animation: gentlePulse 8s infinite ease-in-out;
+        }
+        
+        .heritage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .heritage-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: var(--transition);
+            position: relative;
+            z-index: 1;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .heritage-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-color) 0%, transparent 70%);
+            opacity: 0;
+            transition: var(--transition);
+            z-index: -1;
+        }
+        
+        .heritage-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .heritage-card:hover::before {
+            opacity: 0.05;
+        }
+        
         /* تذييل الصفحة */
         footer {
             background-color: #222;
@@ -922,22 +1190,12 @@
             .governorate-info-grid {
                 grid-template-columns: 1fr;
             }
-        }
-        
-        @media (max-width: 768px) {
-            .hero-content h2 {
-                font-size: 2rem;
-            }
             
-            .section-padding {
-                padding: 60px 0;
-            }
-            
-            .celebration-info, .heritage-content, .economy-content {
+            .national-day-content, .heritage-content, .economy-content {
                 flex-direction: column;
             }
             
-            .heritage-gallery {
+            .national-day-gallery, .heritage-gallery {
                 grid-template-columns: 1fr;
             }
             
@@ -949,264 +1207,44 @@
                 grid-template-columns: repeat(2, 1fr);
             }
             
-            /* تصميم متجاوب للرحلة الوطنية */
-            .journey-path {
+            .celebration-hero h2, .heritage-hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .timeline-item, .timeline-item:nth-child(odd) {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .timeline-year {
+                margin: 20px 0;
+            }
+            
+            .timeline-content::before {
                 display: none;
             }
             
-            .journey-milestones {
-                flex-direction: column;
-                gap: 30px;
+            .timeline-line {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content h2 {
+                font-size: 2rem;
             }
             
-            .milestone {
-                width: 100%;
+            .section-padding {
+                padding: 60px 0;
             }
             
-            .milestone-point {
-                order: 1;
+            .celebration-hero h2, .heritage-hero h2 {
+                font-size: 2rem;
             }
             
-            .milestone-year {
-                order: 2;
+            .celebration-hero p, .heritage-hero p {
+                font-size: 1rem;
             }
-            
-            .milestone-content {
-                order: 3;
-                min-height: auto;
-            }
-            
-            .celebration-card {
-                height: 250px;
-            }
-        }
-        
-        /* أنماط إضافية */
-        .celebration-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 40px;
-        }
-        
-        .feature-item {
-            background: var(--white);
-            padding: 25px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-        
-        .feature-item:hover {
-            transform: translateY(-5px);
-        }
-        
-        .feature-item i {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-        
-        .feature-item h4 {
-            color: var(--secondary-color);
-            margin-bottom: 10px;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 60%, 100% { transform: translateY(0) scale(1.05); }
-            40% { transform: translateY(-10px) scale(1.1); }
-            80% { transform: translateY(-5px) scale(1.08); }
-        }
-        
-        /* أنماط إضافية للعيد الوطني والتراث */
-        .heritage-categories {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .heritage-category {
-            background: var(--white);
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-        
-        .heritage-category:hover {
-            transform: translateY(-10px);
-        }
-        
-        .heritage-category h3 {
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--light-bg);
-        }
-        
-        .heritage-category ul {
-            list-style-type: none;
-        }
-        
-        .heritage-category li {
-            padding: 8px 0;
-            border-bottom: 1px dashed var(--light-bg);
-            position: relative;
-            padding-right: 25px;
-        }
-        
-        .heritage-category li:before {
-            content: "★";
-            position: absolute;
-            right: 0;
-            color: var(--secondary-color);
-        }
-
-        /* أنماط التراث المحسنة */
-        .heritage-intro {
-            background: var(--white);
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            margin-bottom: 40px;
-            text-align: center;
-        }
-        
-        .heritage-sections {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 40px;
-        }
-        
-        .heritage-section {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-        
-        .heritage-section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
-        
-        .heritage-section h3 {
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--light-bg);
-            display: flex;
-            align-items: center;
-        }
-        
-        .heritage-section h3 i {
-            margin-left: 10px;
-            color: var(--secondary-color);
-        }
-        
-        .heritage-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-        
-        .heritage-item-detailed {
-            background: var(--light-bg);
-            padding: 20px;
-            border-radius: 8px;
-            transition: var(--transition);
-        }
-        
-        .heritage-item-detailed:hover {
-            background: #e9e9e9;
-            transform: translateY(-3px);
-        }
-        
-        .heritage-item-detailed h4 {
-            color: var(--secondary-color);
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .heritage-item-detailed h4 i {
-            margin-left: 8px;
-            color: var(--primary-color);
-        }
-        
-        .heritage-item-detailed ul {
-            list-style-type: none;
-            padding-right: 0;
-        }
-        
-        .heritage-item-detailed li {
-            padding: 8px 0;
-            border-bottom: 1px dashed #ccc;
-            position: relative;
-            padding-right: 25px;
-        }
-        
-        .heritage-item-detailed li:before {
-            content: "★";
-            position: absolute;
-            right: 0;
-            color: var(--primary-color);
-        }
-        
-        .heritage-gallery-detailed {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-            margin-top: 30px;
-        }
-        
-        .gallery-item-detailed {
-            height: 200px;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            background-size: cover;
-            background-position: center;
-            transition: var(--transition);
-        }
-        
-        .gallery-item-detailed:hover {
-            transform: scale(1.05);
-        }
-        
-        .heritage-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-        
-        .feature-card {
-            background: var(--light-bg);
-            padding: 25px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .feature-card i {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-        
-        .feature-card h4 {
-            color: var(--secondary-color);
-            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -1255,29 +1293,39 @@
         <section class="governorates section-padding">
             <div class="container">
                 <h2 class="section-title governorates-title">محافظات سلطنة عُمان</h2>
-                <div class="governorate-grid">
-                    <!-- سيتم إضافة المحافظات ديناميكياً -->
+                <div class="governorate-grid" id="governorates-preview">
+                    <!-- سيتم إضافة 3 محافظات فقط ديناميكياً -->
+                </div>
+                <div class="view-all-container">
+                    <a href="#" class="btn btn-secondary" data-page="governorates">عرض جميع المحافظات</a>
                 </div>
             </div>
         </section>
         
-        <!-- قسم العيد الوطني -->
-        <section class="national-day section-padding">
+        <!-- قسم العيد الوطني في الصفحة الرئيسية (مختصر) -->
+        <section class="national-day-main section-padding">
             <div class="container">
                 <h2 class="section-title national-day-title">العيد الوطني العُماني</h2>
-                <div class="celebration-info">
-                    <div class="celebration-text">
-                        <p class="national-day-text-1">يحتفل الشعب العُماني بالعيد الوطني في 20 نوفمبر من كل عام، وهو ذكرى تولي جلالة السلطان هيثم بن طارق - حفظه الله - مقاليد الحكم في البلاد.</p>
-                        <p class="national-day-text-2">يعتبر هذا اليوم مناسبة وطنية غالية على قلوب جميع العُمانيين، حيث تتزين الشوارع والمباني بالأعلام والزينة، وتقام الاحتفالات والفعاليات في جميع أنحاء السلطنة.</p>
-                        <p class="national-day-text-3">تشمل الاحتفالات بالعيد الوطني:</p>
+                <div class="national-day-content">
+                    <div class="national-day-text">
+                        <p class="national-day-text-1">يحتفل الشعب العُماني بالعيد الوطني في 20 نوفمبر من كل عام، وهي ذكرى تأسيس أسرة آل بوسعيد – أسرة الحكم – وبداية مسيرة الدولة العُمانية الحديثة. يمثل هذا اليوم تجسيدًا للوحدة الوطنية والفخر بالانتماء لهذا الوطن الغالي:</p>
+                        <p class="national-day-text-2">تشمل مظاهر الاحتفال بالعيد الوطني:</p>
                         <ul class="national-day-list">
-                            <li class="celebration-item-1">العروض العسكرية والاستعراضات</li>
-                            <li class="celebration-item-2">العروض الفلكلورية والتراثية</li>
-                            <li class="celebration-item-3">المسابقات الثقافية والرياضية</li>
-                            <li class="celebration-item-4">الألعاب النارية والحفلات الموسيقية</li>
-                            <li class="celebration-item-5">المعارض الفنية والتراثية</li>
+                            <li class="national-day-item-1">رفع العلم العُماني في جميع أنحاء السلطنة</li>
+                            <li class="national-day-item-2">العروض العسكرية والاستعراضات</li>
+                            <li class="national-day-item-3">الفعاليات الثقافية والتراثية</li>
+                            <li class="national-day-item-4">الألعاب النارية والعروض الضوئية</li>
+                            <li class="national-day-item-5">الأنشطة والفعاليات الشعبية</li>
                         </ul>
-                        <a href="#" class="btn national-day-btn" data-page="national-day">اعرف المزيد عن الاحتفالات</a>
+                        <p class="national-day-text-3">يمثل العيد الوطني مناسبة وطنية غالية تجسد روح الوحدة والفخر والانتماء لوطن يعانق السماء.</p>
+                        <a href="#" class="btn national-day-btn" data-page="national-day">اكتشف تفاصيل العيد الوطني</a>
+                    </div>
+                    <div class="national-day-gallery">
+                        <!-- الصور المحدثة للعيد الوطني -->
+                        <div class="national-day-item" style="background-image: url('https://cdn4.premiumread.com/?url=https://omandaily.om/omandaily/uploads/images/2022/11/19/2170854.jpeg&w=1000&q=72&f=jpg&t=1')"></div>
+                        <div class="national-day-item" style="background-image: url('https://cdn.al-ain.com/lg/images/2024/11/18/209-162700-03-11-24-865898955.jpg')"></div>
+                        <div class="national-day-item" style="background-image: url('https://cdn.al-ain.com/lg/images/2022/11/18/61-112524-oman-national-day-52-achievements-increasing_700x400.jpg')"></div>
+                        <div class="national-day-item" style="background-image: url('https://rahhal.wego.com/wp-content/uploads/2025/08/omani-national-day-feature.webp')"></div>
                     </div>
                 </div>
             </div>
@@ -1314,8 +1362,11 @@
         <section class="tourism section-padding">
             <div class="container">
                 <h2 class="section-title tourism-title">السياحة في عُمان</h2>
-                <div class="tourism-grid">
-                    <!-- سيتم إضافة معالم سياحية ديناميكياً -->
+                <div class="tourism-grid" id="tourism-preview">
+                    <!-- سيتم إضافة 3 معالم سياحية فقط ديناميكياً -->
+                </div>
+                <div class="view-all-container">
+                    <a href="#" class="btn btn-secondary" data-page="tourism">عرض جميع المعالم السياحية</a>
                 </div>
             </div>
         </section>
@@ -1379,8 +1430,8 @@
             <div class="container">
                 <a href="#" class="back-btn" data-page="home"><i class="fas fa-arrow-right"></i> العودة إلى الرئيسية</a>
                 
-                <div class="governorate-grid">
-                    <!-- سيتم إضافة المحافظات ديناميكياً -->
+                <div class="governorate-grid" id="all-governorates">
+                    <!-- سيتم إضافة جميع المحافظات ديناميكياً -->
                 </div>
             </div>
         </div>
@@ -1399,198 +1450,165 @@
             <div class="container">
                 <a href="#" class="back-btn" data-page="home"><i class="fas fa-arrow-right"></i> العودة إلى الرئيسية</a>
                 
-                <div class="celebration-info">
-                    <div class="celebration-text">
-                        <h3>العيد الوطني العُماني: ملحمة وطنية تتجدد</h3>
-                        <p>يحتفل الشعب العُماني بالعيد الوطني في 20 نوفمبر من كل عام، وهو ذكرى تولي جلالة السلطان هيثم بن طارق - حفظه الله - مقاليد الحكم في البلاد. يمثل هذا اليوم منعطفاً تاريخياً هاماً في مسيرة عُمان الحديثة، حيث يجسد قيم الوحدة الوطنية والتلاحم بين القيادة والشعب.</p>
+                <!-- قسم العيد الوطني المبتكر في الصفحة الانتقالية -->
+                <section class="national-day-innovative section-padding">
+                    <div class="container">
+                        <div class="celebration-hero">
+                            <h2>العيد الوطني العُماني</h2>
+                            <p>احتفالات تجسد روح الوحدة والفخر والانتماء لوطن يعانق السماء</p>
+                        </div>
                         
-                        <!-- رحلة العيد الوطنية المحسنة -->
-                        <div class="national-journey">
-                            <h4>رحلة العيد الوطني عبر التاريخ</h4>
+                        <h2 class="section-title">مظاهر الاحتفال بالعيد الوطني</h2>
+                        
+                        <!-- شبكة البطاقات المبتكرة -->
+                        <div class="celebration-grid">
+                            <div class="celebration-card floating">
+                                <div class="card-icon">
+                                    <i class="fas fa-flag"></i>
+                                </div>
+                                <div class="card-content">
+                                    <h3>رفع العلم الوطني</h3>
+                                    <p>يرفع العلم العُماني في جميع المباني الحكومية والخاصة، وتزين الشوارع بالأعلام والزينة الخضراء والحمراء في مشهد بهيج يعبر عن الفخر والانتماء.</p>
+                                </div>
+                            </div>
                             
-                            <div class="journey-container">
-                                <div class="journey-path"></div>
+                            <div class="celebration-card floating" style="animation-delay: 0.5s;">
+                                <div class="card-icon">
+                                    <i class="fas fa-music"></i>
+                                </div>
+                                <div class="card-content">
+                                    <h3>الفعاليات الثقافية</h3>
+                                    <p>عروض فنية وتراثية تعبر عن الهوية العُمانية، تشمل الرزحة والعازي والفنون الشعبية الأخرى التي تروي قصة أمجاد الأجداد وتراث الأمة.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="celebration-card floating" style="animation-delay: 1s;">
+                                <div class="card-icon">
+                                    <i class="fas fa-fire"></i>
+                                </div>
+                                <div class="card-content">
+                                    <h3>الألعاب النارية</h3>
+                                    <p>عروض الألعاب النارية في مختلف المحافظات، تزين سماء عُمان بألوان العلم الوطني في مشهد ساحر يخطف الأنفاس ويملأ القلوب بهجة.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- الجدول الزمني المبتكر -->
+                        <div class="timeline-section">
+                            <h2 class="section-title">رحلة العيد الوطني عبر التاريخ</h2>
+                            
+                            <div class="timeline-container">
+                                <div class="timeline-line"></div>
                                 
-                                <div class="journey-milestones">
-                                    <div class="milestone">
-                                        <div class="milestone-point">
-                                            <i class="fas fa-flag"></i>
-                                        </div>
-                                        <div class="milestone-year">1970</div>
-                                        <div class="milestone-content">
+                                <div class="timeline-items">
+                                    <div class="timeline-item">
+                                        <div class="timeline-year pulse">1970</div>
+                                        <div class="timeline-content">
                                             <h4>بداية النهضة</h4>
-                                            <p>بداية النهضة العُمانية الحديثة تحت قيادة السلطان قابوس بن سعيد - طيب الله ثراه</p>
+                                            <p>بداية النهضة العُمانية الحديثة تحت قيادة السلطان قابوس بن سعيد - طيب الله ثراه، حيث شهدت عُمان تحولاً تاريخياً في جميع مناحي الحياة.</p>
                                         </div>
                                     </div>
                                     
-                                    <div class="milestone">
-                                        <div class="milestone-point">
-                                            <i class="fas fa-users"></i>
-                                        </div>
-                                        <div class="milestone-year">1980</div>
-                                        <div class="milestone-content">
+                                    <div class="timeline-item">
+                                        <div class="timeline-year pulse">1980</div>
+                                        <div class="timeline-content">
                                             <h4>تطور الاحتفالات</h4>
-                                            <p>تطور الاحتفالات لتشمل عروضاً عسكرية وفعاليات ثقافية في مختلف المحافظات</p>
+                                            <p>تطور الاحتفالات لتشمل عروضاً عسكرية وفعاليات ثقافية في مختلف المحافظات، مع مشاركة شعبية واسعة تعكس الوحدة الوطنية.</p>
                                         </div>
                                     </div>
                                     
-                                    <div class="milestone">
-                                        <div class="milestone-point">
-                                            <i class="fas fa-fireworks"></i>
-                                        </div>
-                                        <div class="milestone-year">2000</div>
-                                        <div class="milestone-content">
+                                    <div class="timeline-item">
+                                        <div class="timeline-year pulse">2000</div>
+                                        <div class="timeline-content">
                                             <h4>الألفية الجديدة</h4>
-                                            <p>انطلاق احتفالات الألفية الجديدة بمشاركة شعبية واسعة وعروض متطورة</p>
+                                            <p>انطلاق احتفالات الألفية الجديدة بمشاركة شعبية واسعة وعروض متطورة تجسد تقدم عُمان وازدهارها في ظل القيادة الحكيمة.</p>
                                         </div>
                                     </div>
                                     
-                                    <div class="milestone">
-                                        <div class="milestone-point">
-                                            <i class="fas fa-crown"></i>
-                                        </div>
-                                        <div class="milestone-year">2020</div>
-                                        <div class="milestone-content">
+                                    <div class="timeline-item">
+                                        <div class="timeline-year pulse">2020</div>
+                                        <div class="timeline-content">
                                             <h4>عهد جديد</h4>
-                                            <p>تولي جلالة السلطان هيثم بن طارق مقاليد الحكم واستمرار مسيرة النهضة</p>
+                                            <p>تولي جلالة السلطان هيثم بن طارق مقاليد الحكم واستمرار مسيرة النهضة، حيث يشهد العيد الوطني في عهده تجديداً للعهد والولاء.</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         
-                        <!-- بطاقات الاحتفال الدوارة -->
-                        <h4>مظاهر الاحتفال بالعيد الوطني</h4>
-                        <div class="celebration-cards">
-                            <div class="celebration-card">
-                                <div class="card-inner">
-                                    <div class="card-front">
-                                        <i class="fas fa-flag"></i>
-                                        <h3>رفع العلم الوطني</h3>
-                                    </div>
-                                    <div class="card-back">
-                                        <h3>رفع العلم الوطني</h3>
-                                        <p>يرفع العلم العُماني في جميع المباني الحكومية والخاصة، وتزين الشوارع بالأعلام والزينة الخضراء والحمراء</p>
-                                    </div>
-                                </div>
-                            </div>
+                        <!-- إنجازات وطنية مبتكرة -->
+                        <div class="achievements-section">
+                            <h2 class="section-title">إنجازات وطنية تستحق الاحتفال</h2>
                             
-                            <div class="celebration-card">
-                                <div class="card-inner">
-                                    <div class="card-front">
-                                        <i class="fas fa-music"></i>
-                                        <h3>الفعاليات الثقافية</h3>
-                                    </div>
-                                    <div class="card-back">
-                                        <h3>الفعاليات الثقافية</h3>
-                                        <p>عروض فنية وتراثية تعبر عن الهوية العُمانية، تشمل الرزحة والعازي والفنون الشعبية الأخرى</p>
-                                    </div>
+                            <div class="achievements-grid">
+                                <div class="achievement-item">
+                                    <i class="fas fa-graduation-cap achievement-icon"></i>
+                                    <h4>التعليم</h4>
+                                    <p>ارتفاع معدل الالتحاق بالتعليم إلى أكثر من 95% مع تطوير المنظومة التعليمية لتواكب متطلبات العصر.</p>
                                 </div>
-                            </div>
-                            
-                            <div class="celebration-card">
-                                <div class="card-inner">
-                                    <div class="card-front">
-                                        <i class="fas fa-fireworks"></i>
-                                        <h3>الألعاب النارية</h3>
-                                    </div>
-                                    <div class="card-back">
-                                        <h3>الألعاب النارية</h3>
-                                        <p>عروض الألعاب النارية في مختلف المحافظات، تزين سماء عُمان بألوان العلم الوطني</p>
-                                    </div>
+                                
+                                <div class="achievement-item">
+                                    <i class="fas fa-hospital achievement-icon"></i>
+                                    <h4>الصحة</h4>
+                                    <p>تطوير نظام صحي متكامل يصل إلى جميع مناطق السلطنة ويوفر خدمات طبية متقدمة للمواطنين.</p>
+                                </div>
+                                
+                                <div class="achievement-item">
+                                    <i class="fas fa-road achievement-icon"></i>
+                                    <h4>البنية التحتية</h4>
+                                    <p>شبكة طرق متطورة تربط جميع المحافظات وتختصر المسافات وتسهل حركة التنقل والتجارة.</p>
+                                </div>
+                                
+                                <div class="achievement-item">
+                                    <i class="fas fa-chart-line achievement-icon"></i>
+                                    <h4>الاقتصاد</h4>
+                                    <p>تنويع مصادر الدخل وتطوير القطاعات غير النفطية في إطار رؤية عُمان 2040 الطموحة.</p>
                                 </div>
                             </div>
                         </div>
                         
-                        <!-- عرض تفاعلي للاحتفالات -->
-                        <div class="celebration-showcase">
-                            <div class="celebration-item">
-                                <div class="celebration-icon">
-                                    <i class="fas fa-parade"></i>
-                                </div>
-                                <div class="celebration-details">
-                                    <h4>العروض العسكرية</h4>
-                                    <p>عروض عسكرية مهيبة تظهر قوة وتنظيم القوات المسلحة العُمانية</p>
-                                </div>
-                            </div>
+                        <!-- رسائل العيد الوطني -->
+                        <div class="messages-section">
+                            <h2 class="section-title" style="color: white;">رسائل العيد الوطني</h2>
                             
-                            <div class="celebration-item">
-                                <div class="celebration-icon">
-                                    <i class="fas fa-theater-masks"></i>
+                            <div class="messages-grid">
+                                <div class="message-card">
+                                    <i class="fas fa-handshake message-icon"></i>
+                                    <h4>الوحدة الوطنية</h4>
+                                    <p>تعزيز روح الانتماء والولاء للوطن والقيادة في ظل مسيرة البناء والتنمية.</p>
                                 </div>
-                                <div class="celebration-details">
-                                    <h4>العروض الفلكلورية</h4>
-                                    <p>عروض تراثية تعكس التنوع الثقافي والتراث الغني لسلطنة عُمان</p>
+                                
+                                <div class="message-card">
+                                    <i class="fas fa-history message-icon"></i>
+                                    <h4>التواصل الحضاري</h4>
+                                    <p>ربط الأصالة بالمعاصرة في مسيرة التنمية التي تحافظ على الهوية وتواكب العصر.</p>
                                 </div>
-                            </div>
-                            
-                            <div class="celebration-item">
-                                <div class="celebration-icon">
-                                    <i class="fas fa-trophy"></i>
+                                
+                                <div class="message-card">
+                                    <i class="fas fa-users message-icon"></i>
+                                    <h4>التلاحم المجتمعي</h4>
+                                    <p>تعزيز قيم التعاون والتكافل بين أفراد المجتمع في إطار الوحدة الوطنية.</p>
                                 </div>
-                                <div class="celebration-details">
-                                    <h4>المسابقات الثقافية</h4>
-                                    <p>مسابقات ثقافية ورياضية تعزز روح المنافسة الشريفة بين المشاركين</p>
+                                
+                                <div class="message-card">
+                                    <i class="fas fa-rocket message-icon"></i>
+                                    <h4>الطموح المستقبلي</h4>
+                                    <p>التطلع نحو مستقبل أفضل للأجيال القادمة في ظل رؤية طموحة وتنمية مستدامة.</p>
                                 </div>
-                            </div>
-                            
-                            <div class="celebration-item">
-                                <div class="celebration-icon">
-                                    <i class="fas fa-gifts"></i>
-                                </div>
-                                <div class="celebration-details">
-                                    <h4>المنح والعطايا</h4>
-                                    <p>إصدار مراسيم بالعفو والعطايا السلطانية، وتكريم المتميزين في مختلف المجالات</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <h4>إنجازات وطنية تستحق الاحتفال</h4>
-                        <p>شهدت عُمان خلال مسيرة النهضة إنجازات تنموية كبيرة في مختلف المجالات:</p>
-                        <ul>
-                            <li><strong>التعليم:</strong> ارتفاع معدل الالتحاق بالتعليم إلى أكثر من 95%</li>
-                            <li><strong>الصحة:</strong> تطوير نظام صحي متكامل يصل إلى جميع مناطق السلطنة</li>
-                            <li><strong>البنية التحتية:</strong> شبكة طرق متطورة تربط جميع المحافظات</li>
-                            <li><strong>الاقتصاد:</strong> تنويع مصادر الدخل وتطوير القطاعات غير النفطية</li>
-                            <li><strong>السياسة الخارجية:</strong> تعزيز دور عُمان الإقليمي والدولي كدولة محبة للسلام</li>
-                        </ul>
-                        
-                        <h4>رسائل العيد الوطني</h4>
-                        <p>يحمل العيد الوطني رسائل عميقة للشعب العُماني:</p>
-                        <div class="celebration-features">
-                            <div class="feature-item">
-                                <i class="fas fa-handshake"></i>
-                                <h4>الوحدة الوطنية</h4>
-                                <p>تعزيز روح الانتماء والولاء للوطن والقيادة</p>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-history"></i>
-                                <h4>التواصل الحضاري</h4>
-                                <p>ربط الأصالة بالمعاصرة في مسيرة التنمية</p>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-users"></i>
-                                <h4>التلاحم المجتمعي</h4>
-                                <p>تعزيز قيم التعاون والتكافل بين أفراد المجتمع</p>
-                            </div>
-                            <div class="feature-item">
-                                <i class="fas fa-rocket"></i>
-                                <h4>الطموح المستقبلي</h4>
-                                <p>التطلع نحو مستقبل أفضل للأجيال القادمة</p>
                             </div>
                         </div>
                     </div>
-                </div>
+                </section>
             </div>
         </div>
     </div>
 
-    <!-- صفحة التراث المحسنة -->
+    <!-- صفحة التراث المبتكرة -->
     <div id="heritage" class="page">
         <div class="page-header">
             <div class="container">
                 <h2 class="page-title">التراث العُماني</h2>
-                <p class="page-subtitle">إرث حضاري يعبر عن عمق التاريخ العُماني</p>
+                <p class="page-subtitle">كنز الأجداد وإرث حضاري يتنفس عبر العصور</p>
             </div>
         </div>
         
@@ -1598,199 +1616,213 @@
             <div class="container">
                 <a href="#" class="back-btn" data-page="home"><i class="fas fa-arrow-right"></i> العودة إلى الرئيسية</a>
                 
-                <div class="heritage-intro">
-                    <h2>التراث العُماني: كنز حضاري يتنفس عبر العصور</h2>
-                    <p>يتميز التراث العُماني بتنوعه وغناه، حيث يحافظ العُمانيون على تقاليدهم وهويتهم الثقافية عبر الأجيال. يمتد هذا التراث لآلاف السنين، ويشكل نسيجاً حضارياً فريداً يجمع بين الأصالة والحداثة.</p>
-                </div>
-                
-                <div class="heritage-sections">
-                    <!-- قسم الحرف التقليدية -->
-                    <div class="heritage-section">
-                        <h3><i class="fas fa-hands"></i> الحرف التقليدية: إبداع الأيادي العُمانية</h3>
-                        <p>تمثل الحرف التقليدية في عُمان إرثاً حياً يعكس براعة الحرفي العُماني وارتباطه الوثيق ببيئته وتراثه. تتنوع هذه الحرف بين صناعات تتعلق بالحياة اليومية وأخرى ترتبط بالمناسبات والزينة.</p>
+                <!-- قسم التراث المبتكر في الصفحة الانتقالية -->
+                <section class="heritage-innovative section-padding">
+                    <div class="container">
+                        <div class="heritage-hero">
+                            <h2>التراث العُماني</h2>
+                            <p>إرث حضاري يعبر عن عمق التاريخ العُماني وثراء الثقافة العربية الأصيلة</p>
+                        </div>
                         
+                        <h2 class="section-title">مظاهر التراث العُماني</h2>
+                        
+                        <!-- شبكة البطاقات المبتكرة -->
                         <div class="heritage-grid">
-                            <div class="heritage-item-detailed">
-                                <h4><i class="fas fa-vase"></i> صناعة الفخار</h4>
-                                <p>تمتد جذور صناعة الفخار في عُمان إلى آلاف السنين، وتشتهر بها ولاية بهلاء بشكل خاص:</p>
-                                <ul>
-                                    <li>أواني الطهي التقليدية بأنواعها المختلفة</li>
-                                    <li>جرار تخزين المياه والحبوب</li>
-                                    <li>أدوات الزينة والتحف الفنية</li>
-                                    <li>تقنيات حرق الفخار بالطرق التقليدية</li>
-                                </ul>
+                            <div class="heritage-card floating">
+                                <div class="card-icon">
+                                    <i class="fas fa-chess-rook"></i>
+                                </div>
+                                <div class="card-content">
+                                    <h3>القلاع والحصون</h3>
+                                    <p>تنتشر في عُمان أكثر من 500 قلعة وحصن، تشكل دروعاً حامية للتاريخ وكنوزاً معمارية تعكس براعة الأجداد في فنون البناء والهندسة الدفاعية.</p>
+                                </div>
                             </div>
                             
-                            <div class="heritage-item-detailed">
-                                <h4><i class="fas fa-rug"></i> النسيج والسجاد</h4>
-                                <p>تشكل صناعة النسيج جزءاً أساسياً من التراث العُماني، خاصة في المناطق الداخلية:</p>
-                                <ul>
-                                    <li>السجاد العُماني بأنواعه وألوانه المميزة</li>
-                                    <li>أغطية الرأس التقليدية (الكمة)</li>
-                                    <li>ملابس الصوف والقطن التقليدية</li>
-                                    <li>أدوات النسيج اليدوية التقليدية</li>
-                                </ul>
+                            <div class="heritage-card floating" style="animation-delay: 0.5s;">
+                                <div class="card-icon">
+                                    <i class="fas fa-hands"></i>
+                                </div>
+                                <div class="card-content">
+                                    <h3>الحرف التقليدية</h3>
+                                    <p>تشكل الحرف اليدوية نسيجاً حياً للتراث العُماني، من صناعة الفخار والنسيج إلى صياغة الفضيات والخناجر، كل قطعة تحمل بصمة إبداع وخبرة متراكمة.</p>
+                                </div>
                             </div>
                             
-                            <div class="heritage-item-detailed">
-                                <h4><i class="fas fa-gem"></i> صناعة الحلي والفضيات</h4>
-                                <p>تعتبر الصناعات الفضية من أبرز مظاهر التراث العُماني، وتتميز بتصاميمها الفريدة:</p>
-                                <ul>
-                                    <li>الخناجر العُمانية المطعمة بالفضة</li>
-                                    <li>الحلي النسائية التقليدية</li>
-                                    <li>أدوات الزينة المنزلية الفضية</li>
-                                    <li>تقنيات النقش والتطعيم التقليدية</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- قسم العمارة العُمانية -->
-                    <div class="heritage-section">
-                        <h3><i class="fas fa-archway"></i> العمارة العُمانية: حوار بين الأرض والإنسان</h3>
-                        <p>تتميز العمارة العُمانية بتكيفها مع البيئة المحيطة، مستخدمة المواد المحلية ببراعة تجمع بين المتانة والجمال.</p>
-                        
-                        <div class="heritage-features">
-                            <div class="feature-card">
-                                <i class="fas fa-fort-awesome"></i>
-                                <h4>القلاع والحصون</h4>
-                                <p>أكثر من 500 قلعة وحصن تشهد على تاريخ عُمان العريق</p>
+                            <div class="heritage-card floating" style="animation-delay: 1s;">
+                                <div class="card-icon">
+                                    <i class="fas fa-music"></i>
+                                </div>
+                                <div class="card-content">
+                                    <h3>الفنون الشعبية</h3>
+                                    <p>تتنوع الفنون الشعبية في عُمان بين الرزحة والعازي والهمبل، تعبيرات فنية راقصة وموسيقية تجسد روح الجماعة وتوثق مناسبات الأفراح والانتصارات.</p>
+                                </div>
                             </div>
                             
-                            <div class="feature-card">
-                                <i class="fas fa-mosque"></i>
-                                <h4>المساجد</h4>
-                                <p>تصميمات معمارية فريدة تجمع بين البساطة والجمال</p>
+                            <div class="heritage-card floating" style="animation-delay: 1.5s;">
+                                <div class="card-icon">
+                                    <i class="fas fa-utensils"></i>
+                                </div>
+                                <div class="card-content">
+                                    <h3>المأكولات التقليدية</h3>
+                                    <p>تمثل المأكولات العُمانية جزءاً أصيلاً من التراث، من الهريس والشواء إلى المقلوبة والرقاق، أطباق تحمل نكهات الأصالة وعبق الذكريات.</p>
+                                </div>
                             </div>
                             
-                            <div class="feature-card">
-                                <i class="fas fa-water"></i>
-                                <h4>الأفلاج</h4>
-                                <p>نظام ري تقليدي أدرج على لائحة التراث العالمي لليونسكو</p>
+                            <div class="heritage-card floating" style="animation-delay: 2s;">
+                                <div class="card-icon">
+                                    <i class="fas fa-tshirt"></i>
+                                </div>
+                                <div class="card-content">
+                                    <h3>الأزياء التقليدية</h3>
+                                    <p>تتميز الأزياء العُمانية بتنوعها وجمالها، من الدشداشة والكمة للرجال إلى الثوب واللثام للنساء، تعكس هوية المجتمع وتقاليده الراسخة.</p>
+                                </div>
                             </div>
                             
-                            <div class="feature-card">
-                                <i class="fas fa-home"></i>
-                                <h4>البيوت التقليدية</h4>
-                                <p>مبانٍ طينية متكيفة مع المناخ الصحراوي</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- قسم الفنون الشعبية -->
-                    <div class="heritage-section">
-                        <h3><i class="fas fa-music"></i> الفنون الشعبية: إيقاعات الوطن</h3>
-                        <p>تمثل الفنون الشعبية في عُمان تعبيراً حياً عن روح الشعب وتراثه الثقافي، حيث تجسد قيم المجتمع وتقاليده في إيقاعات وحركات فنية راقية.</p>
-                        
-                        <div class="heritage-grid">
-                            <div class="heritage-item-detailed">
-                                <h4><i class="fas fa-swords"></i> الرزحة</h4>
-                                <p>فن شعبي يؤدى بالسيوف والتروس، يعبر عن الشجاعة والقوة:</p>
-                                <ul>
-                                    <li>أداء جماعي يتضمن حركات متزامنة</li>
-                                    <li>يرافقه إنشاد الشعر النبطي</li>
-                                    <li>يؤدى في المناسبات الوطنية والاجتماعية</li>
-                                    <li>يمثل هوية وطنية وتراثاً حياً</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="heritage-item-detailed">
-                                <h4><i class="fas fa-microphone-alt"></i> العازي</h4>
-                                <p>فن شعبي يعتمد على الإلقاء الشعري المصحوب بالحركات الإيقاعية:</p>
-                                <ul>
-                                    <li>يركز على مواضيع الفخر والحماسة</li>
-                                    <li>يؤدى في الاستقبالات الرسمية</li>
-                                    <li>يعبر عن قيم الكرم والشهامة</li>
-                                    <li>يحتفي بالمناسبات والأحداث الهامة</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="heritage-item-detailed">
-                                <h4><i class="fas fa-camel"></i> التغرودة</h4>
-                                <p>فن شعبي بدوي يعبر عن حياة الصحراء والترحال:</p>
-                                <ul>
-                                    <li>يرافق رحلات القوافل والإبل</li>
-                                    <li>يعتمد على الإيقاعات البسيطة</li>
-                                    <li>يتناول مواضيع الحنين والغربة</li>
-                                    <li>يحكي قصص البطولة والفروسية</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- قسم المأكولات الشعبية -->
-                    <div class="heritage-section">
-                        <h3><i class="fas fa-utensils"></i> المأكولات الشعبية: نكهات الأصالة</h3>
-                        <p>تشكل المأكولات التقليدية جزءاً مهماً من التراث الثقافي العُماني، حيث تعكس تنوع البيئات الجغرافية وتأثرها بطرق الحياة المختلفة.</p>
-                        
-                        <div class="heritage-grid">
-                            <div class="heritage-item-detailed">
-                                <h4><i class="fas fa-drumstick-bite"></i> الأطباق الرئيسية</h4>
-                                <ul>
-                                    <li><strong>الهريس:</strong> طبق من القمح واللحم المطبوخ لفترات طويلة</li>
-                                    <li><strong>الشواء:</strong> لحم الضأن المشوي على الفحم بطريقة تقليدية</li>
-                                    <li><strong>المقلو:</strong> أرز مطبوخ مع اللحم والتوابل العُمانية</li>
-                                    <li><strong>المحلى:</strong> حلوى تقليدية من الدقيق والسمن والعسل</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="heritage-item-detailed">
-                                <h4><i class="fas fa-coffee"></i> المشروبات التقليدية</h4>
-                                <ul>
-                                    <li><strong>قهوة الهيل:</strong> القهوة العربية الممزوجة بهيل</li>
-                                    <li><strong>شراب الليمون:</strong> مشروب منعش يقدم في المناسبات</li>
-                                    <li><strong>شراب التمر:</strong> مشروب حلو من التمر والماء</li>
-                                    <li><strong>شاي الأعشاب:</strong> مشروبات عشبية تقليدية</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- قسم الجهود الوطنية -->
-                    <div class="heritage-section">
-                        <h3><i class="fas fa-hands-helping"></i> الجهود الوطنية للحفاظ على التراث</h3>
-                        <p>تولي الحكومة العُمانية اهتماماً كبيراً للحفاظ على التراث الثقافي من خلال مبادرات ومشاريع متنوعة تهدف إلى توثيق التراث ونقله للأجيال القادمة.</p>
-                        
-                        <div class="heritage-features">
-                            <div class="feature-card">
-                                <i class="fas fa-landmark"></i>
-                                <h4>المتاحف</h4>
-                                <p>إنشاء المتاحف الوطنية والمحلية لعرض التراث</p>
-                            </div>
-                            
-                            <div class="feature-card">
-                                <i class="fas fa-calendar-alt"></i>
-                                <h4>المهرجانات</h4>
-                                <p>تنظيم المهرجانات التراثية السنوية</p>
-                            </div>
-                            
-                            <div class="feature-card">
-                                <i class="fas fa-tools"></i>
-                                <h4>دعم الحرفيين</h4>
-                                <p>دعم الحرفيين وتشجيع الصناعات التقليدية</p>
-                            </div>
-                            
-                            <div class="feature-card">
-                                <i class="fas fa-book"></i>
-                                <h4>التوثيق</h4>
-                                <p>توثيق التراث الشفوي والمادي</p>
+                            <div class="heritage-card floating" style="animation-delay: 2.5s;">
+                                <div class="card-icon">
+                                    <i class="fas fa-ship"></i>
+                                </div>
+                                <div class="card-content">
+                                    <h3>التراث البحري</h3>
+                                    <p>يمثل التراث البحري جزءاً مهماً من تاريخ عُمان، من صناعة السفن الشراعية إلى فنون الملاحة البحرية، شواهد على أمجاد بحرية امتدت عبر المحيطات.</p>
+                                </div>
                             </div>
                         </div>
                         
-                        <p class="heritage-text-2" style="margin-top: 20px; text-align: center; font-style: italic;">يظل التراث العُماني شاهداً حياً على عراقة الحضارة العُمانية، ومرآة تعكس عمق التاريخ وأصالة الإنسان العُماني الذي حافظ على هويته رغم كل التحديات.</p>
+                        <!-- الجدول الزمني المبتكر -->
+                        <div class="timeline-section">
+                            <h2 class="section-title">رحلة التراث العُماني عبر التاريخ</h2>
+                            
+                            <div class="timeline-container">
+                                <div class="timeline-line"></div>
+                                
+                                <div class="timeline-items">
+                                    <div class="timeline-item">
+                                        <div class="timeline-year pulse">3000 ق.م</div>
+                                        <div class="timeline-content">
+                                            <h4>عصر النحاس</h4>
+                                            <p>ازدهار صناعة النحاس في مجان (عُمان القديمة) وتصديره إلى حضارات ما بين النهرين، مما جعل عُمان مركزاً تجارياً مهماً في العالم القديم.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="timeline-item">
+                                        <div class="timeline-year pulse">القرن 7 م</div>
+                                        <div class="timeline-content">
+                                            <h4>عصر الإسلام</h4>
+                                            <p>دخول الإسلام إلى عُمان وازدهار الثقافة الإسلامية، مع بناء المساجد والمدارس وتطور الفنون الإسلامية في العمارة والخط.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="timeline-item">
+                                        <div class="timeline-year pulse">القرن 16 م</div>
+                                        <div class="timeline-content">
+                                            <h4>العصر البرتغالي</h4>
+                                            <p>بناء القلاع والحصون البرتغالية على السواحل العُمانية، وتطور فنون العمارة العسكرية وازدهار التجارة البحرية.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="timeline-item">
+                                        <div class="timeline-year pulse">القرن 18 م</div>
+                                        <div class="timeline-content">
+                                            <h4>عصر اليعاربة</h4>
+                                            <p>بناء إمبراطورية بحرية عُمانية امتدت من سواحل إفريقيا إلى شبه القارة الهندية، وتطور صناعة السفن والملاحة البحرية.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="timeline-item">
+                                        <div class="timeline-year pulse">القرن 19 م</div>
+                                        <div class="timeline-content">
+                                            <h4>عصر البوسعيد</h4>
+                                            <p>ازدهار التجارة والثقافة في زمن السيد سعيد بن سلطان، وتطور العلاقات الدولية وتنوع التأثيرات الثقافية في التراث العُماني.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="timeline-item">
+                                        <div class="timeline-year pulse">1970 م</div>
+                                        <div class="timeline-content">
+                                            <h4>عصر النهضة</h4>
+                                            <p>بداية النهضة العُمانية الحديثة تحت قيادة السلطان قابوس بن سعيد - طيب الله ثراه، مع الحفاظ على التراث وتطويره في إطار الحداثة.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- إنجازات تراثية مبتكرة -->
+                        <div class="achievements-section">
+                            <h2 class="section-title">كنوز التراث العُماني</h2>
+                            
+                            <div class="achievements-grid">
+                                <div class="achievement-item">
+                                    <i class="fas fa-fort-awesome achievement-icon"></i>
+                                    <h4>القلاع والحصون</h4>
+                                    <p>أكثر من 500 قلعة وحصن منتشرة في جميع أنحاء السلطنة، تشكل متاحف حية للتاريخ والتراث المعماري.</p>
+                                </div>
+                                
+                                <div class="achievement-item">
+                                    <i class="fas fa-ring achievement-icon"></i>
+                                    <h4>صناعة الخناجر</h4>
+                                    <p>فن صناعة الخنجر العُماني الذي يمثل رمزاً للرجولة والفخر، بتصاميم فنية دقيقة وزخارف مميزة.</p>
+                                </div>
+                                
+                                <div class="achievement-item">
+                                    <i class="fas fa-utensil-spoon achievement-icon"></i>
+                                    <h4>المأكولات التقليدية</h4>
+                                    <p>تنوع غني في المأكولات الشعبية التي تعكس البيئة الجغرافية والثقافية المتنوعة في عُمان.</p>
+                                </div>
+                                
+                                <div class="achievement-item">
+                                    <i class="fas fa-vest achievement-icon"></i>
+                                    <h4>الأزياء الشعبية</h4>
+                                    <p>تنوع فريد في الأزياء التقليدية بين المناطق، يعكس الهوية الثقافية والاجتماعية للشعب العُماني.</p>
+                                </div>
+                                
+                                <div class="achievement-item">
+                                    <i class="fas fa-mosque achievement-icon"></i>
+                                    <h4>المساجد التاريخية</h4>
+                                    <p>مساجد أثرية تعود للقرون الأولى للإسلام، تمثل روائع العمارة الإسلامية في عُمان.</p>
+                                </div>
+                                
+                                <div class="achievement-item">
+                                    <i class="fas fa-water achievement-icon"></i>
+                                    <h4>أنظمة الري</h4>
+                                    <p>نظام الأفلاج الهندسي الفريد الذي يمثل إبداعاً في إدارة المياه في البيئة الصحراوية.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- رسائل التراث -->
+                        <div class="messages-section">
+                            <h2 class="section-title" style="color: white;">رسائل التراث العُماني</h2>
+                            
+                            <div class="messages-grid">
+                                <div class="message-card">
+                                    <i class="fas fa-history message-icon"></i>
+                                    <h4>الاستمرارية</h4>
+                                    <p>التراث العُماني يمثل حلقة وصل بين الماضي والحاضر، يحمل قيماً تتجدد عبر الأجيال.</p>
+                                </div>
+                                
+                                <div class="message-card">
+                                    <i class="fas fa-hands-helping message-icon"></i>
+                                    <h4>التواصل الحضاري</h4>
+                                    <p>عُمان جسر بين الحضارات، تراثها يعكس تفاعلاً خلاقاً مع مختلف الثقافات عبر التاريخ.</p>
+                                </div>
+                                
+                                <div class="message-card">
+                                    <i class="fas fa-seedling message-icon"></i>
+                                    <h4>الاستدامة</h4>
+                                    <p>التراث العُماني يعلمنا كيفية التعايش مع البيئة واستغلال مواردها بحكمة ومسؤولية.</p>
+                                </div>
+                                
+                                <div class="message-card">
+                                    <i class="fas fa-heart message-icon"></i>
+                                    <h4>الهوية</h4>
+                                    <p>التراث يمثل جوهر الهوية العُمانية، ينبوع القيم والأصالة الذي يغذي الحاضر والمستقبل.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                
-                <!-- معرض الصور -->
-                <div class="heritage-section">
-                    <h3><i class="fas fa-images"></i> معرض التراث العُماني</h3>
-                    <div class="heritage-gallery-detailed">
-                        <div class="gallery-item-detailed" style="background-image: url('https://travelindigenous.com/wp-content/uploads/%D8%B5%D9%86%D8%A7%D8%B9%D8%A9-%D8%A7%D9%84%D9%81%D8%AE%D8%A7%D8%B1-%D9%81%D9%8A-%D8%A7%D9%84%D8%A5%D9%85%D8%A7%D8%B1%D8%A7%D8%AA-02.webp')"></div>
-                        <div class="gallery-item-detailed" style="background-image: url('https://www.aljazeera.net/wp-content/uploads/2019/08/2c316077-6626-4196-8ebe-b42db8dd2e32.jpeg?quality=80')"></div>
-                        <div class="gallery-item-detailed" style="background-image: url('https://www.aljazeera.net/wp-content/uploads/2018/01/be3d0dc4-c8d2-4603-a688-cf3224144eaa.jpeg')"></div>
-                        <div class="gallery-item-detailed" style="background-image: url('https://www.alkhaleej.ae/sites/default/files/migrated/bd580ddc-c763-4488-84df-c88df495c0b9.jpg')"></div>
-                    </div>
-                </div>
+                </section>
             </div>
         </div>
     </div>
@@ -1808,8 +1840,8 @@
             <div class="container">
                 <a href="#" class="back-btn" data-page="home"><i class="fas fa-arrow-right"></i> العودة إلى الرئيسية</a>
                 
-                <div class="tourism-grid">
-                    <!-- سيتم إضافة معالم سياحية ديناميكياً -->
+                <div class="tourism-grid" id="all-tourism">
+                    <!-- سيتم إضافة جميع المعالم السياحية ديناميكياً -->
                 </div>
                 
                 <div class="tourism-info" style="margin-top: 50px;">
@@ -1975,18 +2007,18 @@
     </footer>
 
     <script>
-        // بيانات المحافظات المحدثة بمحتوى فريد ومبدع لكل محافظة
+        // بيانات المحافظات المحدثة بمحتوى فريد ومبدع لكل محافظة (جميع المحافظات الـ 11)
         const governorates = [
             {
                 id: "muscat",
                 name: "محافظة مسقط",
-                description: "قلب النبض العُماني وعاصمة الأناقة العربية، حيث تتعانق القلاع التاريخية مع ناطحات السحاب الحديثة في مشهد ساحر يروي قصة أمة تواكب العصر بجذور راسخة في التاريخ. مسقط ليست مجرد عاصمة، بل هي لوحة فنية تجمع بين عبق الماضي وروعة الحاضر، حيث تتناغم الأصالة مع الحداثة في كل شارع وزقاق.",
+                description: "قلب النبض العُماني وعاصمة الأناقة العربية، حيث تتعانق القلاع التاريخية مع ناطحات السحاب الحديثة في مشهد ساحر يروي قصة أمة تواكب العصر بجذور راسخة في التاريخ.",
                 image: "https://q11om.wordpress.com/wp-content/uploads/2017/11/bmvh.jpg",
                 population: "1.5 مليون",
                 area: "3,500 كم²",
                 states: "6 ولايات",
                 status: "العاصمة",
-                about: "تعتبر محافظة مسقط درة التاج العُماني والبوابة الرئيسية للعالم، حيث تجمع بين عراقة التاريخ وروعة الحاضر. تطل مسقط على شواطئ خليج عمان الزرقاء، محتضنة بين جنباتها تراثاً حضارياً يمتد لآلاف السنين. تشتهر مسقط بقلاعها الشامخة التي تحكي قصص البطولة، وأسواقها التقليدية التي تعبق بروائح البخور والعطور، ومرافقها الحديثة التي تواكب أحدث التقنيات العالمية.",
+                about: "تعتبر محافظة مسقط درة التاج العُماني والبوابة الرئيسية للعالم، حيث تجمع بين عراقة التاريخ وروعة الحاضر. تطل مسقط على شواطئ خليج عمان الزرقاء، محتضنة بين جنباتها تراثاً حضارياً يمتد لآلاف السنين.",
                 features: [
                     "مسقط - المركز الإداري والتجاري وقلب النبض العُماني",
                     "مطرح - الميناء التجاري التاريخي ودرة الساحل العُماني",
@@ -2012,13 +2044,13 @@
             {
                 id: "dhofar",
                 name: "محافظة ظفار",
-                description: "لؤلؤة الجنوب الساحرة التي تتحول خلال موسم الخريف إلى لوحة فنية طبيعية تخطف الأنفاس، حيث الضباب الراقص على قمم الجبال والخضرة التي تعانق الصخور في رقصة كونية فريدة. ظفار هي أرض اللبان والبخور، حيث تتنفس التاريخ من كل شجرة وواد، وتعتبر جوهرة تاج الجنوب العُماني.",
+                description: "لؤلؤة الجنوب الساحرة التي تتحول خلال موسم الخريف إلى لوحة فنية طبيعية تخطف الأنفاس، حيث الضباب الراقص على قمم الجبال والخضرة التي تعانق الصخور.",
                 image: "https://cdn4.premiumread.com/?url=https://omandaily.om/omandaily/uploads/images/2023/08/23/2418177.jpg&w=1000&q=72&f=jpg&t=1",
                 population: "500 ألف",
                 area: "99,300 كم²",
                 states: "10 ولايات",
                 status: "جنوب السلطنة",
-                about: "محافظة ظفار هي درة الجنوب العُماني وسر جماله الأخاذ، حيث تمتزج الخضرة الدائمة مع روعة الشواطئ البكر. تشتهر ظفار بموسم الخريف الفريد الذي يحولها إلى جنة خضراء، حيث تكتسي الجبال بالضباب وتتدفق الشلالات في مشهد لا يصدق. كانت ظفار عبر التاريخ مصدراً للبان الذي كان يعد من أغلى السلع في العالم القديم، وما زالت تحتفظ بهذا الإرث الثمين حتى اليوم.",
+                about: "محافظة ظفار هي درة الجنوب العُماني وسر جماله الأخاذ، حيث تمتزج الخضرة الدائمة مع روعة الشواطئ البكر. تشتهر ظفار بموسم الخريف الفريد الذي يحولها إلى جنة خضراء.",
                 features: [
                     "صلالة - المركز الإداري والاقتصادي ودرة الخريف الساحر",
                     "طاقة - مدينة اللبان التاريخية وعاصمة العطور القديمة",
@@ -2044,13 +2076,13 @@
             {
                 id: "musandam",
                 name: "محافظة مسندم",
-                description: "درة الشمال المتوجة بتيجان الجبال الشامخة التي تحتضن البحر في أحضانها، creating مشهداً يشبه النرويج الشرقية بفيورداتها الساحرة التي تلامس عنان السماء. مسندم هي لوحة طبيعية خلابة حيث تلتقي الجبال الشاهقة بالمياه الزرقاء في رقصة كونية تخطف الألباب.",
+                description: "درة الشمال المتوجة بتيجان الجبال الشامخة التي تحتضن البحر في أحضانها، creating مشهداً يشبه النرويج الشرقية بفيورداتها الساحرة التي تلامس عنان السماء.",
                 image: "https://media.safarway.com/content/7f722693-4e2c-407c-b4d7-1038b35df95b_sm.jpg",
                 population: "40 ألف",
                 area: "1,800 كم²",
                 states: "4 ولايات",
                 status: "شمال السلطنة",
-                about: "محافظة مسندم هي جوهرة الشمال العُماني ومعجزة الطبيعة الفريدة، حيث تتعانق الجبال الشاهقة مع مياه الخليج العربي في مشهد لا يصدق. تشكل مسندم شبه جزيرة تحرس مضيق هرمز الاستراتيجي، وتتميز بمناظرها الطبيعية التي تشبه الفيوردات النرويجية. تعتبر مسندم وجهة مثالية لمحبي الطبيعة والرياضات البحرية والمغامرات الاستثنائية.",
+                about: "محافظة مسندم هي جوهرة الشمال العُماني ومعجزة الطبيعة الفريدة، حيث تتعانق الجبال الشاهقة مع مياه الخليج العربي في مشهد لا يصدق.",
                 features: [
                     "خصب - المركز الإداري ودرة فيوردات مسندم الساحرة",
                     "بخا - المدينة الساحلية الجميلة وحارسة التراث البحري",
@@ -2074,13 +2106,13 @@
             {
                 id: "buraimi",
                 name: "محافظة البريمي",
-                description: "بوابة التاريخ العُماني التي تحرس حدود الوطن الغالي، حيث تروي واحاتها النضرة حكايات القوافل التجارية والأجداد الذين سطروا ملاحم البطولة على هذه الأرض الطيبة. البريمي هي درة الصحراء وحارسة التراث البدوي الأصيل.",
+                description: "بوابة التاريخ العُماني التي تحرس حدود الوطن الغالي، حيث تروي واحاتها النضرة حكايات القوافل التجارية والأجداد الذين سطروا ملاحم البطولة على هذه الأرض الطيبة.",
                 image: "https://omannews.gov.om/images/topics/pictures/topic153694.jpg",
                 population: "120 ألف",
                 area: "7,000 كم²",
                 states: "3 ولايات",
                 status: "شمال غرب السلطنة",
-                about: "محافظة البريمي هي جوهرة الصحراء العُمانية وحارسة الحدود الغربية، حيث تمتزج عراقة التاريخ مع سخاء الطبيعة. تشتهر البريمي بواحاتها الخضراء التي تشكل جزراً نضرة في بحر الصحراء الذهبية، وكانت عبر التاريخ محطة مهمة على طريق القوافل التجارية القديمة. تحتفظ البريمي بتراث بدوي أصيل يعكس عمق الثقافة العُمانية الأصيلة.",
+                about: "محافظة البريمي هي جوهرة الصحراء العُمانية وحارسة الحدود الغربية، حيث تمتزج عراقة التاريخ مع سخاء الطبيعة.",
                 features: [
                     "البريمي - المركز الإداري ودرة الواحات الخضراء",
                     "محضة - المنطقة الزراعية الخصبة وجنة النخيل الباسقة",
@@ -2103,13 +2135,13 @@
             {
                 id: "dakhiliyah",
                 name: "محافظة الداخلية",
-                description: "القلب النابض لتراث الأجداد والأصالة المتجذرة، حيث تحرس قلاعها الشامخة أسرار حضارة عريقة وتفوح من أزقتها عبق التاريخ العُماني الأصيل. الداخلية هي مهد الحضارة العُمانية وخزانة الذاكرة الوطنية.",
+                description: "القلب النابض لتراث الأجداد والأصالة المتجذرة، حيث تحرس قلاعها الشامخة أسرار حضارة عريقة وتفوح من أزقتها عبق التاريخ العُماني الأصيل.",
                 image: "https://media.safarway.com/content/1137c439-2749-4e91-aa01-a93471001995_sm.jpg",
                 population: "450 ألف",
                 area: "31,900 كم²",
                 states: "8 ولايات",
                 status: "وسط السلطنة",
-                about: "محافظة الداخلية هي درة الوسط العُماني وعاصمة التاريخ المجيد، حيث تحتضن بين جنباتها تراثاً حضارياً يمتد لآلاف السنين. تشتهر الداخلية بقلاعها وحصونها التاريخية التي تروي قصصاً عن عراقة وتاريخ عُمان المجيد، وتتميز بمناظرها الطبيعية الخلابة وجبالها الشاهقة التي تلامس السحاب. تعتبر الداخلية القلب الثقافي لسلطنة عُمان وخزانة تراثها الأصيل.",
+                about: "محافظة الداخلية هي درة الوسط العُماني وعاصمة التاريخ المجيد، حيث تحتضن بين جنباتها تراثاً حضارياً يمتد لآلاف السنين.",
                 features: [
                     "نزوى - عاصمة عُمان التاريخية ودرة التراث العريق",
                     "بهلاء - مدينة التراث العالمي وحارسة الحضارة العُمانية",
@@ -2135,13 +2167,13 @@
             {
                 id: "north-batinah",
                 name: "محافظة شمال الباطنة",
-                description: "سفينة الخير العُمانية التي تمخر عباب البحر وتنثر خيرات الأرض، حيث تتعانق مزارع النخيل مع شواطئ البحر في لوحة تنبض بالحياة والخصب والعطاء. شمال الباطنة هي درة الساحل العُماني وسلة الغذاء الوطنية.",
+                description: "سفينة الخير العُمانية التي تمخر عباب البحر وتنثر خيرات الأرض، حيث تتعانق مزارع النخيل مع شواطئ البحر في لوحة تنبض بالحياة والخصب والعطاء.",
                 image: "https://gov.om/documents/20117/d241b438-5782-765a-29c4-4912e1d8bbaf",
                 population: "800 ألف",
                 area: "12,500 كم²",
                 states: "6 ولايات",
                 status: "شمال السلطنة",
-                about: "محافظة شمال الباطنة هي درة الساحل العُماني وجوهرة الخصوبة والازدهار، حيث تمتزج خصوبة الأرض مع عطاء البحر في تناغم بديع. تشتهر شمال الباطنة بكونها أحد أهم المناطق الزراعية في عُمان، حيث تنتشر مزارع النخيل والبساتين الخضراء على امتداد الساحل. تقع المحافظة على ساحل خليج عمان وتتميز بشواطئها الجميلة وموانئها الحيوية، مما جعلها مركزاً مهماً للصناعة والزراعة والتجارة.",
+                about: "محافظة شمال الباطنة هي درة الساحل العُماني وجوهرة الخصوبة والازدهار، حيث تمتزج خصوبة الأرض مع عطاء البحر في تناغم بديع.",
                 features: [
                     "صحار - العاصمة الصناعية ودرة التطور الاقتصادي",
                     "شناص - المدينة الساحلية الجميلة وحارسة التراث البحري",
@@ -2167,13 +2199,13 @@
             {
                 id: "south-batinah",
                 name: "محافظة جنوب الباطنة",
-                description: "شمس لا تغيب عن حرفة الأجداد وأمواج تروي قصص البحارة، حيث تتعانق الصناعات التقليدية مع إبداعات الحاضر في تناغم يخلد تراثاً يتنفس عبق الماضي. جنوب الباطنة هي درة الحرف اليدوية وعاصمة الصناعات التقليدية.",
+                description: "شمس لا تغيب عن حرفة الأجداد وأمواج تروي قصص البحارة، حيث تتعانق الصناعات التقليدية مع إبداعات الحاضر في تناغم يخلد تراثاً يتنفس عبق الماضي.",
                 image: "https://omannews.gov.om//images/topics/story-images/648ed33801649.jpeg",
                 population: "400 ألف",
                 area: "5,000 كم²",
                 states: "6 ولايات",
                 status: "شمال السلطنة",
-                about: "محافظة جنوب الباطنة هي امتداد طبيعي لشمال الباطنة وجوهرة التراث البحري العُماني، حيث تمتزج عراقة التاريخ مع إبداعات الحاضر في تناغم فريد. تشتهر المحافظة بصناعة السفن التقليدية التي تمثل تحفاً فنية تروي قصص الملاحة العُمانية العريقة، بالإضافة إلى صناعات النحاس والفضيات التي تعكس براعة الحرفيين العُمانيين. تعتبر جنوب الباطنة مركزاً مهماً للزراعة خاصة زراعة النخيل والفواكه التي تزين بساتينها الخضراء.",
+                about: "محافظة جنوب الباطنة هي امتداد طبيعي لشمال الباطنة وجوهرة التراث البحري العُماني، حيث تمتزج عراقة التاريخ مع إبداعات الحاضر في تناغم فريد.",
                 features: [
                     "الرستاق - المركز الإداري ودرة القلاع والحصون التاريخية",
                     "العوابي - المنطقة الساحلية الجميلة وحارسة التراث البحري",
@@ -2199,13 +2231,13 @@
             {
                 id: "dhahira",
                 name: "محافظة الظاهرة",
-                description: "صحراء تروي أسرار البادية وواحات تهمس بحكايات القوافل، حيث تتعانق روابي الرمال الذهبية مع نخيل الواحات في مشهد يختزل جمال الطبيعة العُمانية في أبهى صورها. الظاهرة هي درة الصحراء وعاصمة التراث البدوي.",
+                description: "صحراء تروي أسرار البادية وواحات تهمس بحكايات القوافل، حيث تتعانق روابي الرمال الذهبية مع نخيل الواحات في مشهد يختزل جمال الطبيعة العُمانية في أبهى صورها.",
                 image: "https://omannews.gov.om//images/topics/story-images/67270ead2fd13.jpeg",
                 population: "200 ألف",
                 area: "37,000 كم²",
                 states: "3 ولايات",
                 status: "شمال غرب السلطنة",
-                about: "محافظة الظاهرة هي جوهرة الصحراء العُمانية وعالم السحر والجمال، حيث تمتزج روعة البيئة الصحراوية الفريدة مع سحر الواحات الخضراء في تناغم بديع. تشتهر المحافظة بتربية الإبل التي تمثل تراثاً حياً يعكس عمق الثقافة البدوية، والزراعة في الواحات التي تشكل جزراً خضراء في بحر الرمال الذهبية. تعتبر الظاهرة مركزاً مهماً للتراث البدوي الأصيل وخزانة العادات والتقاليد العُمانية الأصيلة.",
+                about: "محافظة الظاهرة هي جوهرة الصحراء العُمانية وعالم السحر والجمال، حيث تمتزج روعة البيئة الصحراوية الفريدة مع سحر الواحات الخضراء في تناغم بديع.",
                 features: [
                     "عبري - المركز الإداري ودرة الواحات الخضراء",
                     "ينقل - المنطقة الزراعية الخصبة وجنة النخيل الباسقة",
@@ -2228,13 +2260,13 @@
             {
                 id: "wusta",
                 name: "محافظة الوسطى",
-                description: "صمت الصحراء يخفي إيقاع الحياة واتساع الأفق يحكي قصة الأبدية، حيث تتعانق الكثبان الذهبية مع النجوم في ليالي تعبق بسحر البادية وروحانيتها الفياضة. الوسطى هي درة الصحراء العُمانية وعالم السكون والجمال.",
+                description: "صمت الصحراء يخفي إيقاع الحياة واتساع الأفق يحكي قصة الأبدية، حيث تتعانق الكثبان الذهبية مع النجوم في ليالي تعبق بسحر البادية وروحانيتها الفياضة.",
                 image: "https://wejhatt.com/wp-content/uploads/2018/09/87668D7F-D487-4452-BFC3-21DC94D1B903.jpeg",
                 population: "50 ألف",
                 area: "79,700 كم²",
                 states: "4 ولايات",
                 status: "وسط السلطنة",
-                about: "محافظة الوسطى هي جوهرة الصحراء العُمانية وعالم السحر والجمال، حيث تمتد مساحات شاسعة من الرمال الذهبية تحت سماء زرقاء صافية. تشتهر المحافظة ببيئتها الصحراوية الفريدة ومواردها الطبيعية الغنية، خاصة حقول النفط والغاز التي تشكل عماد الاقتصاد الوطني. تعتبر الوسطى موطناً للعديد من الكائنات الصحراوية النادرة التي تتأقلم مع ظروف الصحراء القاسية، مما يجعلها محمية طبيعية فريدة من نوعها.",
+                about: "محافظة الوسطى هي جوهرة الصحراء العُمانية وعالم السحر والجمال، حيث تمتد مساحات شاسعة من الرمال الذهبية تحت سماء زرقاء صافية.",
                 features: [
                     "هيما - المركز الإداري ودرة الصحراء الذهبية",
                     "محوت - المنطقة الساحلية الجميلة وجنة الصيادين",
@@ -2258,13 +2290,13 @@
             {
                 id: "sharqiyah",
                 name: "محافظة الشرقية",
-                description: "شمس تشرق على تاريخ عريق ورمال تروي ملاحم الأجداد، حيث تتعانق الجبال الشامخة مع السهول الخصبة في مشهد يجمع بين صلابة الأرض وعراقة الإنسان. الشرقية هي درة الشرق العُماني وعاصمة التنوع الجغرافي.",
+                description: "شمس تشرق على تاريخ عريق ورمال تروي ملاحم الأجداد، حيث تتعانق الجبال الشامخة مع السهول الخصبة في مشهد يجمع بين صلابة الأرض وعراقة الإنسان.",
                 image: "https://om.sakan.co/blog/wp-content/uploads/2024/05/%D9%85%D8%AD%D8%A7%D9%81%D8%B8%D8%A9-%D8%A7%D9%84%D8%B4%D8%B1%D9%82%D9%8A%D8%A9-%D8%B9%D9%85%D8%A7%D9%86-%D8%A3%D9%81%D8%B6%D9%84-8-%D8%A3%D9%85%D8%A7%D9%83%D9%86-%D8%B3%D9%8A%D8%A7%D8%AD%D9%8A%D8%A9-%D9%81%D9%8A-%D8%A7%D9%84%D8%B4%D8%B1%D9%82%D9%8A%D8%A9-%D8%B3%D9%84%D8%B7%D9%86%D8%A9-%D8%B9%D9%85%D8%A7%D9%86.jpg",
                 population: "400 ألف",
                 area: "36,800 كم²",
                 states: "11 ولاية",
                 status: "شرق السلطنة",
-                about: "محافظة الشرقية هي جوهرة الشرق العُماني وعالم التنوع والجمال، حيث تمتزج عراقة التاريخ مع روعة الطبيعة في تناغم فريد. تشتهر المحافظة بتنوعها الجغرافي المذهل بين الجبال الشاهقة والسهول الخصبة والسواحل الساحرة، مما جعلها وجهة سياحية مميزة. تحتفظ الشرقية بتراث ثقافي غربي وتاريخ عريق يعكس عمق الحضارة العُمانية، وتعتبر مركزاً مهماً للزراعة والثروة الحيوانية التي تشكل مصدر رزق للسكان.",
+                about: "محافظة الشرقية هي جوهرة الشرق العُماني وعالم التنوع والجمال، حيث تمتزج عراقة التاريخ مع روعة الطبيعة في تناغم فريد.",
                 features: [
                     "صور - العاصمة التاريخية ودرة التراث البحري العريق",
                     "إبراء - المركز الإداري وقلب النشاط الاقتصادي",
@@ -2282,7 +2314,7 @@
                     "جبل الأخضر - منطقة جبلية سياحية وسقف الشرق العُماني"
                 ],
                 galleryImages: [
-                    "https://om.sakan.co/blog/wp-content/uploads/2024/05/%D9%85%D8%AD%D8%A7%D9%81%D8%B8%D8%A9-%D8%A7%D9%84%D8%B4%D8%B1%D9%82%D9%8A%D8%A9-%D8%B9%D9%85%D8%A7%D9%86-%D8%A3%D9%81%D8%B6%D9%84-8-%D8%A3%D9%85%D8%A7%D9%83%D9%86-%D8%B3%D9%8A%D8%A7%D8%AD%D9%8A%D8%A9-%D9%81%D9%8A-%D8%A7%D9%84%D8%B4%D8%B1%D9%82%D9%8A%D8%A9-%D8%B3%D9%8A%D8%B7%D9%86%D8%A9-%D8%B9%D9%85%D8%A7%D9%86.jpg",
+                    "https://om.sakan.co/blog/wp-content/uploads/2024/05/%D9%85%D8%AD%D8%A7%D9%81%D8%B8%D8%A9-%D8%A7%D9%84%D8%B4%D8%B1%D9%82%D9%8A%D8%A9-%D8%B9%D9%85%D8%A7%D9%86-%D8%A3%D9%81%D8%B6%D9%84-8-%D8%A3%D9%85%D8%A7%D9%83%D9%86-%D8%B3%D9%8A%D8%A7%D8%AD%D9%8A%D8%A9-%D9%81%D9%8A-%D8%A7%D9%84%D8%B4%D8%B1%D9%82%D9%8A%D8%A9-%D8%B3%D9%84%D8%B7%D9%86%D8%A9-%D8%B9%D9%85%D8%A7%D9%86.jpg",
                     "https://www.omaninfo.om/files/images/thumb/2024-03-28-09-17-57_6604fd853a3d1.jpeg",
                     "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/9d/6b/c4/wadi-bani-khalid-one.jpg?w=1400&h=-1&s=1"
                 ]
@@ -2290,13 +2322,13 @@
             {
                 id: "north-sharqiyah",
                 name: "محافظة شمال الشرقية",
-                description: "حكايات الأجداد تتنفس في كل ركن، وترانيم التاريخ تتردد في كل واد، حيث تتعانق عراقة الماضي مع نبض الحاضر في سيمفونية تروي مجد أمة. شمال الشرقية هي درة التراث وعاصمة الأصالة.",
+                description: "حكايات الأجداد تتنفس في كل ركن، وترانيم التاريخ تتردد في كل واد، حيث تتعانق عراقة الماضي مع نبض الحاضر في سيمفونية تروي مجد أمة.",
                 image: "https://www.omaninfo.om/files/images/thumb/2024-03-28-09-25-52_6604ff60b67e3.jpg",
                 population: "300 ألف",
                 area: "28,400 كم²",
                 states: "6 ولايات",
                 status: "شرق السلطنة",
-                about: "محافظة شمال الشرقية هي الجوهرة الجديدة في تاج عُمان وعالم الأصالة والجمال، حيث انفصلت عن محافظة الشرقية لتكون كياناً إدارياً مستقلاً يحمل في طياته تراثاً غنياً وتاريخاً عريقاً. تتميز المحافظة بتنوعها الجغرافي والثقافي المذهل، حيث تلتقي الجبال الشاهقة مع الوديان الخضراء في مشاهد طبيعية خلابة. تضم شمال الشرقية العديد من المعالم التاريخية والطبيعية المهمة التي تجعلها وجهة سياحية وثقافية مميزة.",
+                about: "محافظة شمال الشرقية هي الجوهرة الجديدة في تاج عُمان وعالم الأصالة والجمال، حيث انفصلت عن محافظة الشرقية لتكون كياناً إدارياً مستقلاً يحمل في طياته تراثاً غنياً وتاريخاً عريقاً.",
                 features: [
                     "بدية - المركز الإداري ودرة الصحراء الذهبية",
                     "وادي بني خالد - المنطقة الطبيعية الساحرة وجنة المغامرات",
@@ -2325,43 +2357,49 @@
         const tourismSites = [
             {
                 name: "جبل شمس",
-                description: "أعلى قمة جبلية في عُمان، تشتهر بشروق الشمس الرائع وإطلالتها البانورامية التي تخطف الأنفاس. يبلغ ارتفاع الجبل 3,009 متراً فوق سطح البحر، ويوفر مشاهد طبيعية خلابة تلامس السحاب. يعتبر جبل شمس وجهة مثالية لمحبي التسلق والمغامرات والتصوير الفوتوغرافي، حيث يمكن للزوار الاستمتاع بمناظر الوادي الشهير والمعروف باسم 'غراند كانيون عُمان'.",
+                description: "أعلى قمة جبلية في عُمان، تشتهر بشروق الشمس الرائع وإطلالتها البانورامية التي تخطف الأنفاس. يبلغ ارتفاع الجبل 3,009 متراً فوق سطح البحر، ويوفر مشاهد طبيعية خلابة تلامس السحاب.",
                 image: "https://peregrinetreks.com/wp-content/uploads/2024/09/Al-Hajar-mountains.webp"
             },
             {
                 name: "خور المغسيل",
-                description: "منطقة ساحلية خلابة تشتهر بنافورات المياه الطبيعية التي تندفع من بين الصخور بقوة مذهلة. خلال المد المرتفع، تندفع المياه من فتحات صغيرة في الصخور مكونة نافورات طبيعية يصل ارتفاع بعضها إلى عدة أمتار. يعتبر خور المغسيل تحفة طبيعية فريدة تجذب السياح من جميع أنحاء العالم، خاصة خلال فصل الشتاء عندما تكون الأمواج في ذروة قوتها.",
+                description: "منطقة ساحلية خلابة تشتهر بنافورات المياه الطبيعية التي تندفع من بين الصخور بقوة مذهلة. خلال المد المرتفع، تندفع المياه من فتحات صغيرة في الصخور مكونة نافورات طبيعية يصل ارتفاع بعضها إلى عدة أمتار.",
                 image: "https://cdn.arabsstock.com/uploads/images/23156/a-of-mughsail-beach-in-thumbnail-23156.webp"
             },
             {
                 name: "سوق مطرح",
-                description: "سوق تقليدي يعج بالحركة ويبيع البخور والفضيات والأزياء التقليدية والحرف اليدوية. يمتد السوق على مسافة كبيرة في أزقة ضيقة ومتاهة من المحلات التجارية التي تعرض منتجات تعكس التراث العُماني الأصيل. يعتبر سوق مطرح وجهة تسوق لا تفوت لأي زائر لمسقط، حيث يمكن العثور على كل شيء من العطور التقليدية إلى المجوهرات الفضية والحرف اليدوية التقليدية.",
+                description: "سوق تقليدي يعج بالحركة ويبيع البخور والفضيات والأزياء التقليدية والحرف اليدوية. يمتد السوق على مسافة كبيرة في أزقة ضيقة ومتاهة من المحلات التجارية التي تعرض منتجات تعكس التراث العُماني الأصيل.",
                 image: "https://media.safarway.com/content/2afb48e1-5c0d-42df-b005-01d2c168f7f0_lg.jpg"
             },
             {
                 name: "خور روري",
-                description: "موقع أثري يعود إلى القرن الأول قبل الميلاد، مدرج على قائمة اليونسكو للتراث العالمي. كان خور روري ميناءً مهماً لمملكة سبأ القديمة، ويعرف أيضاً باسم 'سمهرم'. يضم الموقع بقايا معبد قديم وأطلال المدينة الأثرية التي كانت مركزاً تجارياً مهماً للبان والبخور. يعتبر خور روري شاهداً حياً على الحضارة العُمانية العريقة والتجارة البحرية القديمة.",
+                description: "موقع أثري يعود إلى القرن الأول قبل الميلاد، مدرج على قائمة اليونسكو للتراث العالمي. كان خور روري ميناءً مهماً لمملكة سبأ القديمة، ويعرف أيضاً باسم 'سمهرم'.",
                 image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Khor_Rori_1.jpg/1200px-Khor_Rori_1.jpg"
             },
             {
                 name: "وادي شاب",
-                description: "وادي خلاب في محافظة ظفار يتميز بشلالاته الطبيعية وحوض السباحة الفريد. يمكن للزوار الاستمتاع برحلة مشي ممتعة عبر الممرات المائية والكهوف الطبيعية، والسباحة في البرك الطبيعية ذات المياه الفيروزية الصافية. ينتهي الوادي بشلال رائع يتدفق من ارتفاع 20 متراً، ويوفر تجربة استجمامية فريدة في أحضان الطبيعة البكر.",
+                description: "وادي خلاب في محافظة ظفار يتميز بشلالاته الطبيعية وحوض السباحة الفريد. يمكن للزوار الاستمتاع برحلة مشي ممتعة عبر الممرات المائية والكهوف الطبيعية، والسباحة في البرك الطبيعية ذات المياه الفيروزية الصافية.",
                 image: "https://cnn-arabic-images.cnn.io/cloudinary/image/upload/w_1920,h_1080,c_fill,q_auto,g_center/cnnarabic/2020/07/30/images/161140.jpg"
             },
             {
                 name: "قلعة نزوى",
-                description: "إحدى أقدم القلاع في عُمان، بُنيت في القرن السابع عشر وتعتبر من أهم المعالم التاريخية. تتميز القلعة بتصميمها الدائري الفريد وأبراجها الشاهقة التي تطل على المدينة القديمة. تحتوي القلعة على متحف يعرض تاريخ عُمان الغني، وتوفر إطلالة بانورامية رائعة على واحة النخيل المحيطة والجبال الشاهقة. تعتبر قلعة نزوى رمزاً للقوة والعزة في التاريخ العُماني.",
+                description: "إحدى أقدم القلاع في عُمان، بُنيت في القرن السابع عشر وتعتبر من أهم المعالم التاريخية. تتميز القلعة بتصميمها الدائري الفريد وأبراجها الشاهقة التي تطل على المدينة القديمة.",
                 image: "https://peregrinetreks.com/wp-content/uploads/2024/09/Nizwa-Fort.webp"
             }
         ];
 
         // تهيئة الصفحة
         document.addEventListener('DOMContentLoaded', function() {
-            // تحميل المحافظات
-            loadGovernorates();
+            // تحميل المحافظات في الصفحة الرئيسية (3 فقط)
+            loadGovernoratesPreview();
             
-            // تحميل المعالم السياحية
-            loadTourismSites();
+            // تحميل جميع المحافظات في صفحة المحافظات
+            loadAllGovernorates();
+            
+            // تحميل المعالم السياحية في الصفحة الرئيسية (3 فقط)
+            loadTourismSitesPreview();
+            
+            // تحميل جميع المعالم السياحية في صفحة السياحة
+            loadAllTourismSites();
             
             // إعداد التنقل المتنقل
             setupMobileMenu();
@@ -2371,71 +2409,137 @@
             
             // إعداد تأثيرات التمرير
             setupScrollEffects();
+            
+            // إعداد تأثيرات العيد الوطني المبتكر
+            setupNationalDayEffects();
+            
+            // إعداد تأثيرات التراث المبتكر
+            setupHeritageEffects();
         });
 
-        // تحميل المحافظات في الشبكة
-        function loadGovernorates() {
-            const grid = document.querySelectorAll('.governorate-grid');
+        // تحميل 3 محافظات فقط في الصفحة الرئيسية
+        function loadGovernoratesPreview() {
+            const container = document.getElementById('governorates-preview');
+            container.innerHTML = '';
             
-            grid.forEach(container => {
-                container.innerHTML = '';
-                
-                governorates.forEach(gov => {
-                    const card = document.createElement('div');
-                    card.className = 'governorate-card';
-                    card.setAttribute('data-governorate', gov.id);
-                    card.innerHTML = `
-                        <div class="governorate-img" style="background-image: url('${gov.image}')"></div>
-                        <div class="governorate-content">
-                            <h3 class="governorate-name">${gov.name}</h3>
-                            <p class="governorate-desc">${gov.description}</p>
-                            <a href="#" class="btn explore-governorate-btn">استكشف المحافظة</a>
-                        </div>
-                    `;
-                    container.appendChild(card);
-                });
+            // أخذ أول 3 محافظات فقط
+            const previewGovernorates = governorates.slice(0, 3);
+            
+            previewGovernorates.forEach(gov => {
+                const card = document.createElement('div');
+                card.className = 'governorate-card';
+                card.setAttribute('data-governorate', gov.id);
+                card.innerHTML = `
+                    <div class="governorate-img" style="background-image: url('${gov.image}')"></div>
+                    <div class="governorate-content">
+                        <h3 class="governorate-name">${gov.name}</h3>
+                        <p class="governorate-desc">${gov.description}</p>
+                        <a href="#" class="btn explore-governorate-btn">استكشف المحافظة</a>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
 
-                // إضافة مستمعي الأحداث لبطاقات المحافظات
-                container.querySelectorAll('.governorate-card').forEach(card => {
-                    card.addEventListener('click', function(e) {
-                        if (!e.target.classList.contains('btn')) {
-                            const governorateId = this.getAttribute('data-governorate');
-                            showGovernorateDetail(governorateId);
-                        }
-                    });
-                });
-
-                // إضافة مستمعي الأحداث لأزرار الاستكشاف
-                container.querySelectorAll('.explore-governorate-btn').forEach((btn, index) => {
-                    btn.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        const governorateId = governorates[index].id;
+            // إضافة مستمعي الأحداث لبطاقات المحافظات
+            container.querySelectorAll('.governorate-card').forEach((card, index) => {
+                card.addEventListener('click', function(e) {
+                    if (!e.target.classList.contains('btn')) {
+                        const governorateId = previewGovernorates[index].id;
                         showGovernorateDetail(governorateId);
-                    });
+                    }
+                });
+            });
+
+            // إضافة مستمعي الأحداث لأزرار الاستكشاف
+            container.querySelectorAll('.explore-governorate-btn').forEach((btn, index) => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const governorateId = previewGovernorates[index].id;
+                    showGovernorateDetail(governorateId);
                 });
             });
         }
 
-        // تحميل المعالم السياحية
-        function loadTourismSites() {
-            const grids = document.querySelectorAll('.tourism-grid');
+        // تحميل جميع المحافظات في صفحة المحافظات
+        function loadAllGovernorates() {
+            const container = document.getElementById('all-governorates');
+            container.innerHTML = '';
             
-            grids.forEach(grid => {
-                grid.innerHTML = '';
-                
-                tourismSites.forEach(site => {
-                    const card = document.createElement('div');
-                    card.className = 'tourism-card';
-                    card.innerHTML = `
-                        <div class="tourism-img" style="background-image: url('${site.image}')"></div>
-                        <div class="tourism-content">
-                            <h3 class="tourism-name">${site.name}</h3>
-                            <p class="tourism-desc">${site.description}</p>
-                        </div>
-                    `;
-                    grid.appendChild(card);
+            governorates.forEach(gov => {
+                const card = document.createElement('div');
+                card.className = 'governorate-card';
+                card.setAttribute('data-governorate', gov.id);
+                card.innerHTML = `
+                    <div class="governorate-img" style="background-image: url('${gov.image}')"></div>
+                    <div class="governorate-content">
+                        <h3 class="governorate-name">${gov.name}</h3>
+                        <p class="governorate-desc">${gov.description}</p>
+                        <a href="#" class="btn explore-governorate-btn">استكشف المحافظة</a>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+
+            // إضافة مستمعي الأحداث لبطاقات المحافظات
+            container.querySelectorAll('.governorate-card').forEach((card, index) => {
+                card.addEventListener('click', function(e) {
+                    if (!e.target.classList.contains('btn')) {
+                        const governorateId = governorates[index].id;
+                        showGovernorateDetail(governorateId);
+                    }
                 });
+            });
+
+            // إضافة مستمعي الأحداث لأزرار الاستكشاف
+            container.querySelectorAll('.explore-governorate-btn').forEach((btn, index) => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const governorateId = governorates[index].id;
+                    showGovernorateDetail(governorateId);
+                });
+            });
+        }
+
+        // تحميل 3 معالم سياحية فقط في الصفحة الرئيسية
+        function loadTourismSitesPreview() {
+            const container = document.getElementById('tourism-preview');
+            container.innerHTML = '';
+            
+            // أخذ أول 3 معالم سياحية فقط
+            const previewSites = tourismSites.slice(0, 3);
+            
+            previewSites.forEach(site => {
+                const card = document.createElement('div');
+                card.className = 'tourism-card';
+                card.innerHTML = `
+                    <div class="tourism-img" style="background-image: url('${site.image}')"></div>
+                    <div class="tourism-content">
+                        <h3 class="tourism-name">${site.name}</h3>
+                        <p class="tourism-desc">${site.description}</p>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // تحميل جميع المعالم السياحية في صفحة السياحة
+        function loadAllTourismSites() {
+            const container = document.getElementById('all-tourism');
+            container.innerHTML = '';
+            
+            tourismSites.forEach(site => {
+                const card = document.createElement('div');
+                card.className = 'tourism-card';
+                card.innerHTML = `
+                    <div class="tourism-img" style="background-image: url('${site.image}')"></div>
+                    <div class="tourism-content">
+                        <h3 class="tourism-name">${site.name}</h3>
+                        <p class="tourism-desc">${site.description}</p>
+                    </div>
+                `;
+                container.appendChild(card);
             });
         }
 
@@ -2512,6 +2616,78 @@
                 card.style.transform = 'translateY(20px)';
                 card.style.transition = 'opacity 0.5s, transform 0.5s';
                 observer.observe(card);
+            });
+        }
+
+        // إعداد تأثيرات العيد الوطني المبتكر
+        function setupNationalDayEffects() {
+            // تأثير التمرير للعناصر
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // تطبيق التأثير على البطاقات والجدول الزمني
+            document.querySelectorAll('.celebration-card, .timeline-content, .achievement-item, .message-card').forEach(item => {
+                item.style.opacity = 0;
+                item.style.transform = 'translateY(30px)';
+                item.style.transition = 'opacity 0.6s, transform 0.6s';
+                observer.observe(item);
+            });
+            
+            // تأثير النقر على البطاقات
+            document.querySelectorAll('.celebration-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    this.style.transform = 'translateY(-15px) scale(1.03)';
+                    setTimeout(() => {
+                        this.style.transform = 'translateY(-15px) scale(1.02)';
+                    }, 150);
+                });
+            });
+        }
+
+        // إعداد تأثيرات التراث المبتكر
+        function setupHeritageEffects() {
+            // تأثير التمرير للعناصر
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // تطبيق التأثير على البطاقات والجدول الزمني
+            document.querySelectorAll('.heritage-card, .timeline-content, .achievement-item, .message-card').forEach(item => {
+                item.style.opacity = 0;
+                item.style.transform = 'translateY(30px)';
+                item.style.transition = 'opacity 0.6s, transform 0.6s';
+                observer.observe(item);
+            });
+            
+            // تأثير النقر على البطاقات
+            document.querySelectorAll('.heritage-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    this.style.transform = 'translateY(-15px) scale(1.03)';
+                    setTimeout(() => {
+                        this.style.transform = 'translateY(-15px) scale(1.02)';
+                    }, 150);
+                });
             });
         }
 
