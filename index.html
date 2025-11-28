@@ -1070,6 +1070,78 @@
             opacity: 0.05;
         }
         
+        /* قسم الاقتصاد المبتكر في الصفحة الانتقالية */
+        .economy-innovative {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .economy-hero {
+            text-align: center;
+            padding: 60px 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 20px;
+            margin-bottom: 50px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .economy-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(255,255,255,0.1) 0%, transparent 50%);
+            animation: gentlePulse 8s infinite ease-in-out;
+        }
+        
+        .economy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .economy-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: var(--transition);
+            position: relative;
+            z-index: 1;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .economy-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-color) 0%, transparent 70%);
+            opacity: 0;
+            transition: var(--transition);
+            z-index: -1;
+        }
+        
+        .economy-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .economy-card:hover::before {
+            opacity: 0.05;
+        }
+        
         /* تذييل الصفحة */
         footer {
             background-color: #222;
@@ -1207,7 +1279,7 @@
                 grid-template-columns: repeat(2, 1fr);
             }
             
-            .celebration-hero h2, .heritage-hero h2 {
+            .celebration-hero h2, .heritage-hero h2, .economy-hero h2 {
                 font-size: 2.5rem;
             }
             
@@ -1238,11 +1310,11 @@
                 padding: 60px 0;
             }
             
-            .celebration-hero h2, .heritage-hero h2 {
+            .celebration-hero h2, .heritage-hero h2, .economy-hero h2 {
                 font-size: 2rem;
             }
             
-            .celebration-hero p, .heritage-hero p {
+            .celebration-hero p, .heritage-hero p, .economy-hero p {
                 font-size: 1rem;
             }
         }
@@ -1884,7 +1956,7 @@
         </div>
     </div>
 
-    <!-- صفحة الاقتصاد -->
+    <!-- صفحة الاقتصاد المبتكرة -->
     <div id="economy" class="page">
         <div class="page-header">
             <div class="container">
@@ -1897,43 +1969,183 @@
             <div class="container">
                 <a href="#" class="back-btn" data-page="home"><i class="fas fa-arrow-right"></i> العودة إلى الرئيسية</a>
                 
-                <div class="economy-content">
-                    <div class="economy-text">
-                        <p class="economy-text-1">يشهد الاقتصاد العُماني تطوراً ملحوظاً في إطار رؤية عُمان 2040 التي تهدف إلى تنويع مصادر الدخل وتقليل الاعتماد على النفط.</p>
-                        <p class="economy-text-2">تشمل القطاعات الاقتصادية الرئيسية في عُمان:</p>
-                        <ul class="economy-list">
-                            <li class="economy-item-1">قطاع النفط والغاز الذي يشكل العمود الفقري للاقتصاد</li>
-                            <li class="economy-item-2">السياحة والتراث الثقافي</li>
-                            <li class="economy-item-3">اللوجستيات والنقل</li>
-                            <li class="economy-item-4">الصناعة والتصنيع</li>
-                            <li class="economy-item-5">الزراعة والثروة السمكية</li>
-                            <li class="economy-item-6">التعدين والموارد الطبيعية</li>
-                        </ul>
-                        <p class="economy-text-3">تسعى الحكومة العُمانية إلى جذب الاستثمارات الأجنبية وتطوير البنية التحتية لتحقيق نمو اقتصادي مستدام.</p>
+                <!-- قسم الاقتصاد المبتكر في الصفحة الانتقالية -->
+                <section class="economy-innovative section-padding">
+                    <div class="container">
+                        <div class="economy-hero">
+                            <h2>الاقتصاد العُماني</h2>
+                            <p>رحلة التحول الاقتصادي نحو تنمية مستدامة واقتصاد معرفي متنوع</p>
+                        </div>
+                        
+                        <h2 class="section-title">رؤية عُمان 2040: محركات النمو الاقتصادي</h2>
+                        
+                        <!-- شبكة البطاقات المبتكرة -->
+                        <div class="economy-grid">
+                            <div class="economy-card floating">
+                                <div class="card-icon">
+                                    <i class="fas fa-industry"></i>
+                                </div>
+                                <div class="card-content">
+                                    <h3>التنويع الاقتصادي</h3>
+                                    <p>تحقيق الاستدامة الاقتصادية من خلال تنويع مصادر الدخل وتقليل الاعتماد على النفط، مع التركيز على الصناعات التحويلية والخدمات المتقدمة.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="economy-card floating" style="animation-delay: 0.5s;">
+                                <div class="card-icon">
+                                    <i class="fas fa-gem"></i>
+                                </div>
+                                <div class="card-content">
+                                    <h3>القطاعات الواعدة</h3>
+                                    <p>تطوير قطاعات اقتصادية واعدة مثل السياحة واللوجستيات والتصنيع والطاقة المتجددة والثروة السمكية والزراعة الحديثة.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="economy-card floating" style="animation-delay: 1s;">
+                                <div class="card-icon">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
+                                <div class="card-content">
+                                    <h3>الشراكة بين القطاعين</h3>
+                                    <p>تعزيز الشراكات بين القطاعين العام والخاص لدفع عجلة النمو الاقتصادي وجذب الاستثمارات المحلية والأجنبية.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- الجدول الزمني المبتكر -->
+                        <div class="timeline-section">
+                            <h2 class="section-title">رحلة الاقتصاد العُماني عبر الزمن</h2>
+                            
+                            <div class="timeline-container">
+                                <div class="timeline-line"></div>
+                                
+                                <div class="timeline-items">
+                                    <div class="timeline-item">
+                                        <div class="timeline-year pulse">1970</div>
+                                        <div class="timeline-content">
+                                            <h4>بداية النهضة الاقتصادية</h4>
+                                            <p>بداية النهضة العُمانية الحديثة تحت قيادة السلطان قابوس بن سعيد - طيب الله ثراه، مع التركيز على بناء البنية التحتية وتطوير قطاع النفط.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="timeline-item">
+                                        <div class="timeline-year pulse">1995</div>
+                                        <div class="timeline-content">
+                                            <h4>التحول الاقتصادي الأول</h4>
+                                            <p>انطلاق خطط التنمية الخمسية وبداية الاهتمام بالقطاعات غير النفطية، مع تطوير البنية التحتية والخدمات الأساسية.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="timeline-item">
+                                        <div class="timeline-year pulse">2010</div>
+                                        <div class="timeline-content">
+                                            <h4>تسريع التنويع الاقتصادي</h4>
+                                            <p>تسريع وتيرة التنويع الاقتصادي مع التركيز على الصناعات التحويلية والسياحة واللوجستيات، ووضع استراتيجيات للتنمية المستدامة.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="timeline-item">
+                                        <div class="timeline-year pulse">2020</div>
+                                        <div class="timeline-content">
+                                            <h4>رؤية عُمان 2040</h4>
+                                            <p>إطلاق رؤية عُمان 2040 كخارطة طريق للتحول الاقتصادي والاجتماعي، مع التركيز على الاقتصاد الرقمي والابتكار والاستدامة.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="timeline-item">
+                                        <div class="timeline-year pulse">2030</div>
+                                        <div class="timeline-content">
+                                            <h4>اقتصاد المعرفة</h4>
+                                            <p>التحول نحو اقتصاد المعرفة والابتكار، مع زيادة مساهمة القطاعات غير النفطية في الناتج المحلي الإجمالي.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="timeline-item">
+                                        <div class="timeline-year pulse">2040</div>
+                                        <div class="timeline-content">
+                                            <h4>الاقتصاد المستدام</h4>
+                                            <p>تحقيق اقتصاد متنوع ومستدام قائم على الابتكار والمعرفة، مع تحسين مؤشرات التنافسية العالمية وجودة الحياة.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- إنجازات اقتصادية مبتكرة -->
+                        <div class="achievements-section">
+                            <h2 class="section-title">محركات النمو الاقتصادي</h2>
+                            
+                            <div class="achievements-grid">
+                                <div class="achievement-item">
+                                    <i class="fas fa-oil-well achievement-icon"></i>
+                                    <h4>الطاقة والصناعة</h4>
+                                    <p>تطوير قطاع النفط والغاز والصناعات البتروكيماوية والطاقة المتجددة، مع زيادة القيمة المضافة للموارد الطبيعية.</p>
+                                </div>
+                                
+                                <div class="achievement-item">
+                                    <i class="fas fa-ship achievement-icon"></i>
+                                    <h4>اللوجستيات والنقل</h4>
+                                    <p>تعزيز الموقع الاستراتيجي لعُمان كمركز لوجستي عالمي، مع تطوير الموانئ والمطارات والمناطق الاقتصادية.</p>
+                                </div>
+                                
+                                <div class="achievement-item">
+                                    <i class="fas fa-camera achievement-icon"></i>
+                                    <h4>السياحة والتراث</h4>
+                                    <p>تنمية قطاع السياحة المستدامة والتراث الثقافي، مع زيادة القدرة الاستيعابية والخدمات السياحية المتميزة.</p>
+                                </div>
+                                
+                                <div class="achievement-item">
+                                    <i class="fas fa-fish achievement-icon"></i>
+                                    <h4>الثروة السمكية</h4>
+                                    <p>تنمية قطاع الثروة السمكية والاستزراع المائي، مع الحفاظ على الموارد البحرية وزيادة القيمة المضافة.</p>
+                                </div>
+                                
+                                <div class="achievement-item">
+                                    <i class="fas fa-seedling achievement-icon"></i>
+                                    <h4>الزراعة والأمن الغذائي</h4>
+                                    <p>تعزيز الأمن الغذائي والزراعة الحديثة، مع التركيز على التقنيات المتطورة والاستدامة البيئية.</p>
+                                </div>
+                                
+                                <div class="achievement-item">
+                                    <i class="fas fa-laptop-code achievement-icon"></i>
+                                    <h4>الاقتصاد الرقمي</h4>
+                                    <p>بناء اقتصاد رقمي قائم على الابتكار والتقنيات الحديثة، مع تطوير البنية التحتية الرقمية والمهارات التقنية.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- رسائل اقتصادية -->
+                        <div class="messages-section">
+                            <h2 class="section-title" style="color: white;">رؤى اقتصادية استراتيجية</h2>
+                            
+                            <div class="messages-grid">
+                                <div class="message-card">
+                                    <i class="fas fa-chart-line message-icon"></i>
+                                    <h4>النمو المستدام</h4>
+                                    <p>تحقيق نمو اقتصادي مستدام ومتوازن يعزز القدرة التنافسية ويحقق الرفاهية للمواطنين.</p>
+                                </div>
+                                
+                                <div class="message-card">
+                                    <i class="fas fa-users message-icon"></i>
+                                    <h4>رأس المال البشري</h4>
+                                    <p>الاستثمار في رأس المال البشري وتنمية المهارات لبناء اقتصاد معرفي قائم على الابتكار.</p>
+                                </div>
+                                
+                                <div class="message-card">
+                                    <i class="fas fa-globe message-icon"></i>
+                                    <h4>الاندماج العالمي</h4>
+                                    <p>تعزيز الاندماج في الاقتصاد العالمي من خلال الشراكات الدولية والاستثمارات الأجنبية.</p>
+                                </div>
+                                
+                                <div class="message-card">
+                                    <i class="fas fa-leaf message-icon"></i>
+                                    <h4>الاستدامة البيئية</h4>
+                                    <p>دمج البعد البيئي في السياسات الاقتصادية لتحقيق تنمية مستدامة تحافظ على الموارد الطبيعية.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="economy-stats">
-                        <div class="stat-card">
-                            <i class="fas fa-oil-well"></i>
-                            <h3 class="stat-value">68%</h3>
-                            <p class="stat-desc stat-oil-desc">مساهمة النفط في الناتج المحلي</p>
-                        </div>
-                        <div class="stat-card">
-                            <i class="fas fa-plane"></i>
-                            <h3 class="stat-value">3.5M</h3>
-                            <p class="stat-desc stat-tourists-desc">عدد السياح سنوياً</p>
-                        </div>
-                        <div class="stat-card">
-                            <i class="fas fa-industry"></i>
-                            <h3 class="stat-value">17%</h3>
-                            <p class="stat-desc stat-industry-desc">مساهمة الصناعة في الناتج المحلي</p>
-                        </div>
-                        <div class="stat-card">
-                            <i class="fas fa-fish"></i>
-                            <h3 class="stat-value">200K</h3>
-                            <p class="stat-desc stat-fish-desc">طن من الأسماك سنوياً</p>
-                        </div>
-                    </div>
-                </div>
+                </section>
             </div>
         </div>
     </div>
@@ -2415,6 +2627,9 @@
             
             // إعداد تأثيرات التراث المبتكر
             setupHeritageEffects();
+            
+            // إعداد تأثيرات الاقتصاد المبتكر
+            setupEconomyEffects();
         });
 
         // تحميل 3 محافظات فقط في الصفحة الرئيسية
@@ -2682,6 +2897,42 @@
             
             // تأثير النقر على البطاقات
             document.querySelectorAll('.heritage-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    this.style.transform = 'translateY(-15px) scale(1.03)';
+                    setTimeout(() => {
+                        this.style.transform = 'translateY(-15px) scale(1.02)';
+                    }, 150);
+                });
+            });
+        }
+
+        // إعداد تأثيرات الاقتصاد المبتكر
+        function setupEconomyEffects() {
+            // تأثير التمرير للعناصر
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // تطبيق التأثير على البطاقات والجدول الزمني
+            document.querySelectorAll('.economy-card, .timeline-content, .achievement-item, .message-card').forEach(item => {
+                item.style.opacity = 0;
+                item.style.transform = 'translateY(30px)';
+                item.style.transition = 'opacity 0.6s, transform 0.6s';
+                observer.observe(item);
+            });
+            
+            // تأثير النقر على البطاقات
+            document.querySelectorAll('.economy-card').forEach(card => {
                 card.addEventListener('click', function() {
                     this.style.transform = 'translateY(-15px) scale(1.03)';
                     setTimeout(() => {
