@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>سلطنة عُمان - درة الخليج وكنز التراث | Sultanate of Oman - Pearl of the Gulf and Heritage Treasure</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- إضافة مكتبة html2canvas لتحويل التذكرة إلى صورة -->
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <style>
         /* أنماط عامة */
         :root {
@@ -39,19 +41,18 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 15px;
+            padding: 0 20px;
         }
         
         .section-padding {
-            padding: 60px 0;
+            padding: 80px 0;
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
             color: var(--primary-color);
             position: relative;
-            font-size: 2rem;
         }
         
         .section-title::after {
@@ -74,7 +75,6 @@
             transition: var(--transition);
             border: none;
             cursor: pointer;
-            font-size: 1rem;
         }
         
         .btn:hover {
@@ -148,7 +148,7 @@
         }
         
         .logo h1 {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             color: var(--primary-color);
         }
         
@@ -177,7 +177,6 @@
             transition: var(--transition);
             display: flex;
             align-items: center;
-            font-size: 1rem;
         }
         
         .nav-links li a i {
@@ -213,7 +212,6 @@
         /* قسم البطل */
         .hero {
             height: 80vh;
-            min-height: 500px;
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://peregrinetreks.com/wp-content/uploads/2024/09/Al-Hajar-mountains.webp');
             background-size: cover;
             background-position: center;
@@ -225,7 +223,7 @@
         }
         
         .hero-content h2 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             margin-bottom: 20px;
             text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
         }
@@ -234,7 +232,6 @@
             font-size: 1.2rem;
             margin-bottom: 30px;
             max-width: 700px;
-            padding: 0 15px;
         }
         
         /* قسم المحافظات */
@@ -245,7 +242,7 @@
         .governorate-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
+            gap: 30px;
         }
         
         .governorate-card {
@@ -299,7 +296,6 @@
             color: var(--primary-color);
             margin-bottom: 10px;
             transition: var(--transition);
-            font-size: 1.3rem;
         }
         
         .governorate-card:hover .governorate-content h3 {
@@ -404,7 +400,7 @@
         .tourism-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
+            gap: 30px;
         }
         
         .tourism-card {
@@ -432,7 +428,6 @@
         .tourism-content h3 {
             color: var(--primary-color);
             margin-bottom: 10px;
-            font-size: 1.3rem;
         }
         
         /* قسم الاقتصاد */
@@ -496,17 +491,16 @@
         }
         
         .governorate-header h1 {
-            font-size: 2.5rem;
+            font-size: 3.5rem;
             margin-bottom: 20px;
             text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
         }
         
         .governorate-header p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             max-width: 800px;
             margin: 0 auto;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-            padding: 0 15px;
         }
         
         .governorate-stats {
@@ -565,7 +559,6 @@
             margin-bottom: 20px;
             padding-bottom: 10px;
             border-bottom: 2px solid var(--light-bg);
-            font-size: 1.5rem;
         }
         
         .governorate-features ul {
@@ -625,7 +618,7 @@
         }
         
         .page-header h2 {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             margin-bottom: 15px;
         }
         
@@ -666,7 +659,7 @@
         
         .celebration-hero {
             text-align: center;
-            padding: 60px 20px;
+            padding: 60px 0;
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
             border-radius: 20px;
@@ -695,7 +688,7 @@
         }
         
         .celebration-hero h2 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             margin-bottom: 20px;
             position: relative;
             z-index: 1;
@@ -1041,7 +1034,7 @@
         
         .heritage-hero {
             text-align: center;
-            padding: 60px 20px;
+            padding: 60px 0;
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
             border-radius: 20px;
@@ -1113,7 +1106,7 @@
         
         .economy-hero {
             text-align: center;
-            padding: 60px 20px;
+            padding: 60px 0;
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
             border-radius: 20px;
@@ -1174,6 +1167,224 @@
         
         .economy-card:hover::before {
             opacity: 0.05;
+        }
+
+        /* قسم تذكرة السفر الشخصية */
+        .travel-ticket-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 80px 0;
+            border-radius: 20px;
+            margin: 80px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .travel-ticket-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 0%, transparent 50%);
+        }
+        
+        .ticket-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .ticket-form {
+            flex: 1;
+            min-width: 300px;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .ticket-form h3 {
+            margin-bottom: 20px;
+            text-align: center;
+            color: var(--accent-color);
+        }
+        
+        .ticket-input {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 10px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            font-size: 1.1rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .ticket-input::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .ticket-input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .ticket-preview {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            transform-style: preserve-3d;
+            perspective: 1000px;
+            transition: var(--transition);
+        }
+        
+        .ticket-preview:hover {
+            transform: translateY(-10px) rotateX(5deg);
+        }
+        
+        .ticket-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 25px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ticket-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 30% 20%, rgba(255,255,255,0.2) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(255,255,255,0.2) 0%, transparent 50%);
+        }
+        
+        .ticket-title {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .ticket-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .ticket-body {
+            padding: 30px;
+            color: var(--text-color);
+        }
+        
+        .ticket-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .info-item {
+            text-align: center;
+            padding: 15px;
+            background: var(--light-bg);
+            border-radius: 10px;
+            transition: var(--transition);
+        }
+        
+        .info-item:hover {
+            transform: translateY(-5px);
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .info-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 5px;
+        }
+        
+        .info-value {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        
+        .passenger-name {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin: 20px 0;
+            padding: 20px;
+            border: 3px dashed var(--accent-color);
+            border-radius: 15px;
+            background: rgba(0, 128, 0, 0.05);
+        }
+        
+        .ticket-footer {
+            text-align: center;
+            padding: 20px;
+            border-top: 2px solid var(--light-bg);
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+        
+        .ticket-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .ticket-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 25px;
+            border-radius: 50px;
+            background: var(--accent-color);
+            color: var(--text-color);
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: var(--transition);
+        }
+        
+        .ticket-btn:hover {
+            background: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .ticket-btn.secondary {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .ticket-btn.secondary:hover {
+            background: white;
+            color: var(--primary-color);
         }
         
         /* تذييل الصفحة */
@@ -1264,12 +1475,6 @@
         }
         
         /* تصميم متجاوب */
-        @media (max-width: 1200px) {
-            .container {
-                max-width: 95%;
-            }
-        }
-        
         @media (max-width: 992px) {
             .nav-links {
                 display: none;
@@ -1296,7 +1501,7 @@
             }
             
             .hero-content h2 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
             }
             
             .governorate-info-grid {
@@ -1312,7 +1517,7 @@
             }
             
             .governorate-header h1 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
             }
             
             .governorate-stats {
@@ -1320,7 +1525,7 @@
             }
             
             .celebration-hero h2, .heritage-hero h2, .economy-hero h2 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
             }
             
             .timeline-item, .timeline-item:nth-child(odd) {
@@ -1340,130 +1545,43 @@
                 display: none;
             }
             
-            .section-title {
-                font-size: 1.8rem;
+            .ticket-container {
+                flex-direction: column;
+            }
+            
+            .ticket-preview {
+                width: 100%;
             }
         }
         
         @media (max-width: 768px) {
             .hero-content h2 {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
             
             .section-padding {
-                padding: 50px 0;
+                padding: 60px 0;
             }
             
             .celebration-hero h2, .heritage-hero h2, .economy-hero h2 {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
             
             .celebration-hero p, .heritage-hero p, .economy-hero p {
                 font-size: 1rem;
             }
             
-            .governorate-grid, .tourism-grid {
+            .ticket-info {
                 grid-template-columns: 1fr;
             }
             
-            .governorate-stats {
-                grid-template-columns: 1fr;
+            .ticket-actions {
+                flex-direction: column;
             }
             
-            .economy-stats {
-                grid-template-columns: 1fr;
-            }
-            
-            .national-day-gallery, .heritage-gallery {
-                grid-template-columns: 1fr;
-            }
-            
-            .national-day-item, .heritage-item {
-                height: 200px;
-            }
-            
-            .section-title {
-                font-size: 1.6rem;
-            }
-            
-            .page-header h2 {
-                font-size: 1.8rem;
-            }
-            
-            .governorate-header h1 {
-                font-size: 1.8rem;
-            }
-            
-            .card-content h3 {
-                font-size: 1.3rem;
-            }
-            
-            .hero-content p {
-                font-size: 1rem;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .hero {
-                height: 70vh;
-                min-height: 400px;
-            }
-            
-            .hero-content h2 {
-                font-size: 1.5rem;
-            }
-            
-            .hero-content p {
-                font-size: 0.9rem;
-            }
-            
-            .section-title {
-                font-size: 1.4rem;
-            }
-            
-            .page-header h2 {
-                font-size: 1.6rem;
-            }
-            
-            .governorate-header h1 {
-                font-size: 1.6rem;
-            }
-            
-            .btn {
-                padding: 10px 20px;
-                font-size: 0.9rem;
-            }
-            
-            .card-content {
-                padding: 20px;
-            }
-            
-            .card-content h3 {
-                font-size: 1.2rem;
-            }
-            
-            .celebration-hero, .heritage-hero, .economy-hero {
-                padding: 40px 15px;
-            }
-            
-            .celebration-hero h2, .heritage-hero h2, .economy-hero h2 {
-                font-size: 1.6rem;
-            }
-            
-            .translate-btn {
-                bottom: 15px;
-                left: 15px;
-                padding: 10px 15px;
-                font-size: 0.9rem;
-            }
-            
-            .logo h1 {
-                font-size: 1.2rem;
-            }
-            
-            .nav-links li a {
-                padding: 8px 12px;
-                font-size: 0.9rem;
+            .ticket-btn {
+                width: 100%;
+                justify-content: center;
             }
         }
     </style>
@@ -2090,6 +2208,72 @@
                     <!-- سيتم إضافة جميع المعالم السياحية ديناميكياً -->
                 </div>
                 
+                <!-- قسم تذكرة السفر الشخصية -->
+                <section class="travel-ticket-section">
+                    <div class="container">
+                        <h2 class="section-title" style="color: white;" data-ar="تذكرة سفر رمزية إلى مسقط" data-en="Symbolic Travel Ticket to Muscat">تذكرة سفر رمزية إلى مسقط</h2>
+                        <p style="text-align: center; max-width: 700px; margin: 0 auto 40px;" data-ar="احصل على تذكرة سفر رمزية باسمك إلى عاصمة عُمان الساحرة" data-en="Get a symbolic travel ticket with your name to the charming capital of Oman">احصل على تذكرة سفر رمزية باسمك إلى عاصمة عُمان الساحرة</p>
+                        
+                        <div class="ticket-container">
+                            <!-- نموذج إدخال الاسم -->
+                            <div class="ticket-form">
+                                <h3 data-ar="أنشئ تذكرتك" data-en="Create Your Ticket">أنشئ تذكرتك</h3>
+                                <input type="text" id="passengerName" class="ticket-input" placeholder="اكتب اسمك هنا..." data-ar-placeholder="اكتب اسمك هنا..." data-en-placeholder="Enter your name here...">
+                                <div class="ticket-actions">
+                                    <button class="ticket-btn" id="generateTicket" data-ar="إنشاء التذكرة" data-en="Generate Ticket">
+                                        <i class="fas fa-ticket-alt"></i>
+                                        <span>إنشاء التذكرة</span>
+                                    </button>
+                                    <button class="ticket-btn secondary" id="downloadTicket" data-ar="تنزيل التذكرة" data-en="Download Ticket" disabled>
+                                        <i class="fas fa-download"></i>
+                                        <span>تنزيل التذكرة</span>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- معاينة التذكرة -->
+                            <div class="ticket-preview" id="ticketPreview">
+                                <div class="ticket-header">
+                                    <h3 class="ticket-title" data-ar="تذكرة سفر إلى مسقط" data-en="Travel Ticket to Muscat">تذكرة سفر إلى مسقط</h3>
+                                    <p class="ticket-subtitle" data-ar="سلطنة عُمان - درة الخليج" data-en="Sultanate of Oman - Pearl of the Gulf">سلطنة عُمان - درة الخليج</p>
+                                </div>
+                                <div class="ticket-body">
+                                    <div class="ticket-info">
+                                        <div class="info-item">
+                                            <div class="info-label" data-ar="وجهة السفر" data-en="Destination">وجهة السفر</div>
+                                            <div class="info-value">مسقط</div>
+                                        </div>
+                                        <div class="info-item">
+                                            <div class="info-label" data-ar="تاريخ الرحلة" data-en="Travel Date">تاريخ الرحلة</div>
+                                            <div class="info-value" id="travelDate">--/--/----</div>
+                                        </div>
+                                        <div class="info-item">
+                                            <div class="info-label" data-ar="رقم التذكرة" data-en="Ticket Number">رقم التذكرة</div>
+                                            <div class="info-value" id="ticketNumber">OM-#####</div>
+                                        </div>
+                                        <div class="info-item">
+                                            <div class="info-label" data-ar="فئة الرحلة" data-en="Class">فئة الرحلة</div>
+                                            <div class="info-value" data-ar="سياحية" data-en="Economy">سياحية</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="passenger-name" id="displayPassengerName" data-ar="اسم المسافر" data-en="Passenger Name">
+                                        اسم المسافر
+                                    </div>
+                                    
+                                    <div style="text-align: center; margin: 20px 0;">
+                                        <p data-ar="هذه تذكرة رمزية تحمل أمنية زيارة مسقط، عاصمة عُمان الساحرة" data-en="This is a symbolic ticket carrying the wish to visit Muscat, the charming capital of Oman">هذه تذكرة رمزية تحمل أمنية زيارة مسقط، عاصمة عُمان الساحرة</p>
+                                    </div>
+                                </div>
+                                <div class="ticket-footer">
+                                    <p data-ar="نتمنى لكم رحلة سعيدة إلى مسقط!" data-en="We wish you a happy journey to Muscat!">نتمنى لكم رحلة سعيدة إلى مسقط!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- معلومات سياحية إضافية -->
                 <div class="tourism-info" style="margin-top: 50px;">
                     <h3 class="section-title" data-ar="السياحة في عُمان: وجهة لكل محبي الطبيعة والتراث" data-en="Tourism in Oman: A Destination for All Nature and Heritage Lovers">السياحة في عُمان: وجهة لكل محبي الطبيعة والتراث</h3>
                     <div class="tourism-content">
@@ -2592,7 +2776,7 @@
                     en: "Musandam Governorate"
                 },
                 description: {
-                    ar: "درة الشمال المتوجة بتيجان جبال الشامخة التي تحتضن البحر في أحضانها، مما يخلق مشهداً يشبه الرومانسي الشرقي بفيورداتها الساحرة التي تلامس عنان السماء.",
+                    ar: "درة الشمال المتوجة بتيجان الجبال الشامخة التي تحتضن البحر في أحضانها، creating مشهداً يشبه النرويج الشرقية بفيورداتها الساحرة التي تلامس عنان السماء.",
                     en: "The jewel of the North crowned with majestic mountain peaks that embrace the sea in their arms, creating a scene resembling Eastern Norway with its enchanting fjords that touch the sky."
                 },
                 image: "https://media.safarway.com/content/7f722693-4e2c-407c-b4d7-1038b35df95b_sm.jpg",
@@ -3456,50 +3640,103 @@
             // إعداد زر الترجمة
             setupTranslationButton();
             
-            // تحديث حجم العناصر عند تغيير حجم النافذة
-            window.addEventListener('resize', handleResize);
+            // إعداد نظام تذكرة السفر
+            setupTravelTicketSystem();
             
-            // تهيئة حجم العناصر عند التحميل
-            handleResize();
+            // تعيين التاريخ الحالي في التذكرة
+            setCurrentDate();
+            
+            // توليد رقم تذكرة عشوائي
+            generateTicketNumber();
         });
 
-        // التعامل مع تغيير حجم النافذة
-        function handleResize() {
-            // تحديث ارتفاعات العناصر بناءً على حجم الشاشة
-            updateElementHeights();
+        // إعداد نظام تذكرة السفر
+        function setupTravelTicketSystem() {
+            const generateBtn = document.getElementById('generateTicket');
+            const downloadBtn = document.getElementById('downloadTicket');
+            const passengerNameInput = document.getElementById('passengerName');
             
-            // إعادة ضبط تأثيرات التمرير
-            setupScrollEffects();
+            generateBtn.addEventListener('click', function() {
+                const passengerName = passengerNameInput.value.trim();
+                
+                if (passengerName === '') {
+                    if (currentLanguage === 'ar') {
+                        alert('الرجاء إدخال اسمك');
+                    } else {
+                        alert('Please enter your name');
+                    }
+                    return;
+                }
+                
+                // عرض اسم المسافر في التذكرة
+                const displayName = document.getElementById('displayPassengerName');
+                displayName.textContent = passengerName;
+                
+                // تمكين زر التنزيل
+                downloadBtn.disabled = false;
+                downloadBtn.style.opacity = '1';
+                
+                // إضافة تأثير للبطاقة
+                const ticketPreview = document.getElementById('ticketPreview');
+                ticketPreview.style.transform = 'translateY(-10px) rotateX(5deg)';
+                
+                // إشعار نجاح
+                if (currentLanguage === 'ar') {
+                    alert(`تم إنشاء تذكرة لـ ${passengerName} بنجاح! يمكنك الآن تنزيل التذكرة.`);
+                } else {
+                    alert(`Ticket for ${passengerName} created successfully! You can now download the ticket.`);
+                }
+            });
+            
+            // تنزيل التذكرة كصورة
+            downloadBtn.addEventListener('click', function() {
+                if (downloadBtn.disabled) return;
+                
+                const ticketPreview = document.getElementById('ticketPreview');
+                
+                // استخدام html2canvas لالتقاط التذكرة كصورة
+                html2canvas(ticketPreview, {
+                    backgroundColor: '#ffffff',
+                    scale: 2, // زيادة الدقة
+                    useCORS: true // السماح بصور من مصادر خارجية
+                }).then(canvas => {
+                    // تحويل Canvas إلى صورة
+                    const link = document.createElement('a');
+                    link.download = `تذكرة_سفر_إلى_مسقط_${Date.now()}.png`;
+                    link.href = canvas.toDataURL('image/png');
+                    link.click();
+                    
+                    // إشعار تنزيل
+                    if (currentLanguage === 'ar') {
+                        alert('تم تنزيل التذكرة بنجاح!');
+                    } else {
+                        alert('Ticket downloaded successfully!');
+                    }
+                }).catch(error => {
+                    console.error('Error generating ticket:', error);
+                    if (currentLanguage === 'ar') {
+                        alert('حدث خطأ أثناء إنشاء التذكرة. حاول مرة أخرى.');
+                    } else {
+                        alert('An error occurred while generating the ticket. Please try again.');
+                    }
+                });
+            });
+            
+            // تحديث placeholder عند تغيير اللغة
+            passengerNameInput.setAttribute('placeholder', currentLanguage === 'ar' ? 'اكتب اسمك هنا...' : 'Enter your name here...');
         }
-        
-        // تحديث ارتفاعات العناصر بناءً على حجم الشاشة
-        function updateElementHeights() {
-            const screenWidth = window.innerWidth;
-            
-            // تعديل ارتفاع قسم البطل على الأجهزة الصغيرة
-            const hero = document.querySelector('.hero');
-            if (hero && screenWidth < 768) {
-                hero.style.height = '70vh';
-                hero.style.minHeight = '400px';
-            }
-            
-            // تعديل حجم النصوص بناءً على حجم الشاشة
-            const titleElements = document.querySelectorAll('.section-title, .page-title, .hero-content h2');
-            titleElements.forEach(title => {
-                if (screenWidth < 576) {
-                    title.style.fontSize = '1.4rem';
-                } else if (screenWidth < 768) {
-                    title.style.fontSize = '1.6rem';
-                }
-            });
-            
-            // تحديث تخطيط البطاقات بناءً على حجم الشاشة
-            const grids = document.querySelectorAll('.governorate-grid, .tourism-grid, .celebration-grid, .heritage-grid, .economy-grid');
-            grids.forEach(grid => {
-                if (screenWidth < 768) {
-                    grid.style.gridTemplateColumns = '1fr';
-                }
-            });
+
+        // تعيين التاريخ الحالي
+        function setCurrentDate() {
+            const now = new Date();
+            const formattedDate = now.toLocaleDateString(currentLanguage === 'ar' ? 'ar-SA' : 'en-US');
+            document.getElementById('travelDate').textContent = formattedDate;
+        }
+
+        // توليد رقم تذكرة عشوائي
+        function generateTicketNumber() {
+            const randomNum = Math.floor(10000 + Math.random() * 90000);
+            document.getElementById('ticketNumber').textContent = `OM-${randomNum}`;
         }
 
         // إعداد زر الترجمة
@@ -3520,6 +3757,13 @@
                 // تحديث اتجاه الصفحة
                 document.documentElement.dir = currentLanguage === 'ar' ? 'rtl' : 'ltr';
                 document.documentElement.lang = currentLanguage;
+                
+                // تحديث placeholder لحقل الاسم
+                const passengerNameInput = document.getElementById('passengerName');
+                passengerNameInput.setAttribute('placeholder', currentLanguage === 'ar' ? 'اكتب اسمك هنا...' : 'Enter your name here...');
+                
+                // تحديث التاريخ الحالي بناءً على اللغة
+                setCurrentDate();
             });
         }
         
@@ -3804,22 +4048,13 @@
                     navLinks.classList.remove('active');
                 });
             });
-            
-            // إغلاق القائمة عند النقر خارجها
-            document.addEventListener('click', function(event) {
-                const isClickInsideNav = navLinks.contains(event.target) || mobileMenuToggle.contains(event.target);
-                if (!isClickInsideNav && navLinks.classList.contains('active')) {
-                    navLinks.classList.remove('active');
-                }
-            });
         }
 
         // إعداد تأثيرات التمرير
         function setupScrollEffects() {
             // إضافة تأثيرات للعناصر عند التمرير
             const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
+                threshold: 0.1
             };
             
             const observer = new IntersectionObserver(function(entries) {
@@ -3966,12 +4201,6 @@
                 top: 0,
                 behavior: 'smooth'
             });
-            
-            // إغلاق القائمة المتنقلة إذا كانت مفتوحة
-            const navLinks = document.querySelector('.nav-links');
-            if (navLinks.classList.contains('active')) {
-                navLinks.classList.remove('active');
-            }
         }
 
         // عرض صفحة المحافظة التفصيلية
@@ -4058,4 +4287,3 @@
     </script>
 </body>
 </html>
-
