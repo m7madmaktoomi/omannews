@@ -39,18 +39,19 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 15px;
         }
         
         .section-padding {
-            padding: 80px 0;
+            padding: 60px 0;
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             color: var(--primary-color);
             position: relative;
+            font-size: 2rem;
         }
         
         .section-title::after {
@@ -73,6 +74,7 @@
             transition: var(--transition);
             border: none;
             cursor: pointer;
+            font-size: 1rem;
         }
         
         .btn:hover {
@@ -146,7 +148,7 @@
         }
         
         .logo h1 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             color: var(--primary-color);
         }
         
@@ -175,6 +177,7 @@
             transition: var(--transition);
             display: flex;
             align-items: center;
+            font-size: 1rem;
         }
         
         .nav-links li a i {
@@ -210,6 +213,7 @@
         /* قسم البطل */
         .hero {
             height: 80vh;
+            min-height: 500px;
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://peregrinetreks.com/wp-content/uploads/2024/09/Al-Hajar-mountains.webp');
             background-size: cover;
             background-position: center;
@@ -221,7 +225,7 @@
         }
         
         .hero-content h2 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             margin-bottom: 20px;
             text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
         }
@@ -230,6 +234,7 @@
             font-size: 1.2rem;
             margin-bottom: 30px;
             max-width: 700px;
+            padding: 0 15px;
         }
         
         /* قسم المحافظات */
@@ -240,7 +245,7 @@
         .governorate-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 25px;
         }
         
         .governorate-card {
@@ -294,6 +299,7 @@
             color: var(--primary-color);
             margin-bottom: 10px;
             transition: var(--transition);
+            font-size: 1.3rem;
         }
         
         .governorate-card:hover .governorate-content h3 {
@@ -398,7 +404,7 @@
         .tourism-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 25px;
         }
         
         .tourism-card {
@@ -426,6 +432,7 @@
         .tourism-content h3 {
             color: var(--primary-color);
             margin-bottom: 10px;
+            font-size: 1.3rem;
         }
         
         /* قسم الاقتصاد */
@@ -489,16 +496,17 @@
         }
         
         .governorate-header h1 {
-            font-size: 3.5rem;
+            font-size: 2.5rem;
             margin-bottom: 20px;
             text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
         }
         
         .governorate-header p {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             max-width: 800px;
             margin: 0 auto;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            padding: 0 15px;
         }
         
         .governorate-stats {
@@ -557,6 +565,7 @@
             margin-bottom: 20px;
             padding-bottom: 10px;
             border-bottom: 2px solid var(--light-bg);
+            font-size: 1.5rem;
         }
         
         .governorate-features ul {
@@ -616,7 +625,7 @@
         }
         
         .page-header h2 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             margin-bottom: 15px;
         }
         
@@ -657,7 +666,7 @@
         
         .celebration-hero {
             text-align: center;
-            padding: 60px 0;
+            padding: 60px 20px;
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
             border-radius: 20px;
@@ -686,7 +695,7 @@
         }
         
         .celebration-hero h2 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             margin-bottom: 20px;
             position: relative;
             z-index: 1;
@@ -1032,7 +1041,7 @@
         
         .heritage-hero {
             text-align: center;
-            padding: 60px 0;
+            padding: 60px 20px;
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
             border-radius: 20px;
@@ -1104,7 +1113,7 @@
         
         .economy-hero {
             text-align: center;
-            padding: 60px 0;
+            padding: 60px 20px;
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
             border-radius: 20px;
@@ -1255,6 +1264,12 @@
         }
         
         /* تصميم متجاوب */
+        @media (max-width: 1200px) {
+            .container {
+                max-width: 95%;
+            }
+        }
+        
         @media (max-width: 992px) {
             .nav-links {
                 display: none;
@@ -1281,7 +1296,7 @@
             }
             
             .hero-content h2 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
             
             .governorate-info-grid {
@@ -1297,7 +1312,7 @@
             }
             
             .governorate-header h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
             
             .governorate-stats {
@@ -1305,7 +1320,7 @@
             }
             
             .celebration-hero h2, .heritage-hero h2, .economy-hero h2 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
             
             .timeline-item, .timeline-item:nth-child(odd) {
@@ -1324,23 +1339,131 @@
             .timeline-line {
                 display: none;
             }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
         }
         
         @media (max-width: 768px) {
             .hero-content h2 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
             
             .section-padding {
-                padding: 60px 0;
+                padding: 50px 0;
             }
             
             .celebration-hero h2, .heritage-hero h2, .economy-hero h2 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
             
             .celebration-hero p, .heritage-hero p, .economy-hero p {
                 font-size: 1rem;
+            }
+            
+            .governorate-grid, .tourism-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .governorate-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .economy-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .national-day-gallery, .heritage-gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            .national-day-item, .heritage-item {
+                height: 200px;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .page-header h2 {
+                font-size: 1.8rem;
+            }
+            
+            .governorate-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .card-content h3 {
+                font-size: 1.3rem;
+            }
+            
+            .hero-content p {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                height: 70vh;
+                min-height: 400px;
+            }
+            
+            .hero-content h2 {
+                font-size: 1.5rem;
+            }
+            
+            .hero-content p {
+                font-size: 0.9rem;
+            }
+            
+            .section-title {
+                font-size: 1.4rem;
+            }
+            
+            .page-header h2 {
+                font-size: 1.6rem;
+            }
+            
+            .governorate-header h1 {
+                font-size: 1.6rem;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .card-content {
+                padding: 20px;
+            }
+            
+            .card-content h3 {
+                font-size: 1.2rem;
+            }
+            
+            .celebration-hero, .heritage-hero, .economy-hero {
+                padding: 40px 15px;
+            }
+            
+            .celebration-hero h2, .heritage-hero h2, .economy-hero h2 {
+                font-size: 1.6rem;
+            }
+            
+            .translate-btn {
+                bottom: 15px;
+                left: 15px;
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+            
+            .logo h1 {
+                font-size: 1.2rem;
+            }
+            
+            .nav-links li a {
+                padding: 8px 12px;
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -2469,7 +2592,7 @@
                     en: "Musandam Governorate"
                 },
                 description: {
-                    ar: "درة الشمال المتوجة بتيجان جبال الشامخة التي تحتضن البحر في أحضانها، مما يخلق مشهداً يشبه الرومانسي الشرقي بفيورداتها الساحرة التي تلامس عنان السماء.",
+                    ar: "درة الشمال المتوجة بتيجان الجبال الشامخة التي تحتضن البحر في أحضانها، creating مشهداً يشبه النرويج الشرقية بفيورداتها الساحرة التي تلامس عنان السماء.",
                     en: "The jewel of the North crowned with majestic mountain peaks that embrace the sea in their arms, creating a scene resembling Eastern Norway with its enchanting fjords that touch the sky."
                 },
                 image: "https://media.safarway.com/content/7f722693-4e2c-407c-b4d7-1038b35df95b_sm.jpg",
@@ -3332,7 +3455,52 @@
             
             // إعداد زر الترجمة
             setupTranslationButton();
+            
+            // تحديث حجم العناصر عند تغيير حجم النافذة
+            window.addEventListener('resize', handleResize);
+            
+            // تهيئة حجم العناصر عند التحميل
+            handleResize();
         });
+
+        // التعامل مع تغيير حجم النافذة
+        function handleResize() {
+            // تحديث ارتفاعات العناصر بناءً على حجم الشاشة
+            updateElementHeights();
+            
+            // إعادة ضبط تأثيرات التمرير
+            setupScrollEffects();
+        }
+        
+        // تحديث ارتفاعات العناصر بناءً على حجم الشاشة
+        function updateElementHeights() {
+            const screenWidth = window.innerWidth;
+            
+            // تعديل ارتفاع قسم البطل على الأجهزة الصغيرة
+            const hero = document.querySelector('.hero');
+            if (hero && screenWidth < 768) {
+                hero.style.height = '70vh';
+                hero.style.minHeight = '400px';
+            }
+            
+            // تعديل حجم النصوص بناءً على حجم الشاشة
+            const titleElements = document.querySelectorAll('.section-title, .page-title, .hero-content h2');
+            titleElements.forEach(title => {
+                if (screenWidth < 576) {
+                    title.style.fontSize = '1.4rem';
+                } else if (screenWidth < 768) {
+                    title.style.fontSize = '1.6rem';
+                }
+            });
+            
+            // تحديث تخطيط البطاقات بناءً على حجم الشاشة
+            const grids = document.querySelectorAll('.governorate-grid, .tourism-grid, .celebration-grid, .heritage-grid, .economy-grid');
+            grids.forEach(grid => {
+                if (screenWidth < 768) {
+                    grid.style.gridTemplateColumns = '1fr';
+                }
+            });
+        }
 
         // إعداد زر الترجمة
         function setupTranslationButton() {
@@ -3636,13 +3804,22 @@
                     navLinks.classList.remove('active');
                 });
             });
+            
+            // إغلاق القائمة عند النقر خارجها
+            document.addEventListener('click', function(event) {
+                const isClickInsideNav = navLinks.contains(event.target) || mobileMenuToggle.contains(event.target);
+                if (!isClickInsideNav && navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                }
+            });
         }
 
         // إعداد تأثيرات التمرير
         function setupScrollEffects() {
             // إضافة تأثيرات للعناصر عند التمرير
             const observerOptions = {
-                threshold: 0.1
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
             };
             
             const observer = new IntersectionObserver(function(entries) {
@@ -3789,6 +3966,12 @@
                 top: 0,
                 behavior: 'smooth'
             });
+            
+            // إغلاق القائمة المتنقلة إذا كانت مفتوحة
+            const navLinks = document.querySelector('.nav-links');
+            if (navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+            }
         }
 
         // عرض صفحة المحافظة التفصيلية
@@ -3875,4 +4058,3 @@
     </script>
 </body>
 </html>
-
